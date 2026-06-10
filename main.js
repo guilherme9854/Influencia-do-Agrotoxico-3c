@@ -21,11 +21,11 @@ const translations = {
         evalTitle: "Avalie nosso site", evalBad: "Lamentamos. Como podemos melhorar?", evalThanks: "Obrigado pela sua avaliação! 💚",
         refTitle: "Referências e Fontes Oficiais", refC1: "Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).",
         refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.",
-        cookieMsg: "Nós valorizamos sua privacidade! Utilizamos cookies e tecnologias semelhantes para coletar dados de navegação, melhorar o desempenho do ecossistema e personalizar seu conteúdo acadêmico de acordo com a nossa Política de Cookies.", 
+        cookieMsg: "Nós valorizamos sua privacidade! Utilizamos cookies para coletar dados essenciais de navegação, melhorar sua experiência no site e personalizar conteúdos de acordo com a nossa Política de Privacidade.", 
         copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados.",
         aboutTitle: "Sobre este Ecossistema Digital",
         aboutDesc: "Esta plataforma foi desenvolvida como uma ferramenta educacional e científica focada na disseminação de dados sobre agricultura regenerativa e manejo biológico de pragas. O objetivo central é conscientizar a comunidade escolar e produtores rurais a respeito da viabilidade econômica da substituição de defensivos químicos por organismos macrobiológicos, promovendo a conservação dos polinizadores nativos, o equilíbrio dos solos agrícolas e a segurança alimentar a longo prazo em total conformidade com as diretrizes do Programa Agrinho.",
-        btnSend: "Enviar", btnAccept: "Aceitar Tudo", btnReject: "Recusar", btnSettings: "Preferências", correctTxt: "Correto!", wrongTxt: "Incorreto."
+        btnSend: "Enviar", btnAccept: "Aceitar Tudo", btnReject: "Recusar", correctTxt: "Correto!", wrongTxt: "Incorreto."
     },
     en: {
         logo: "Agro<span>Sustainable</span>", navHeader: "Navigation", lnkInicio: "Home", lnkDados: "General Data",
@@ -45,11 +45,11 @@ const translations = {
         evalTitle: "Rate our site", evalBad: "We are sorry. How can we improve?", evalThanks: "Thank you for your rating! 💚",
         refTitle: "References and Official Sources", refC1: "National Guidelines for Integrated Pest Management (IPM).",
         refC2: "Global reports on the safe use of biological inputs in farming.",
-        cookieMsg: "We value your privacy! We use cookies and similar technologies to collect browsing data, improve ecosystem performance, and personalize your academic content according to our Cookies Policy.", 
+        cookieMsg: "We value your privacy! We use cookies to collect essential browsing data, improve your site experience, and personalize content in accordance with our Privacy Policy.", 
         copy: "&copy; 2026 AgroSustentável. All rights reserved.",
         aboutTitle: "About this Digital Ecosystem",
-        aboutDesc: "This platform was developed as an educational and scientific tool focused on the dissemination of data on regenerative agriculture and biological pest management. The central objective is to raise awareness among the school community and rural producers regarding the economic viability of replacing chemical pesticides with macrobiological organisms, promoting the conservation of native pollinators, the balance of agricultural soils, and long-term food security in full compliance with the guidelines of the Agrinho Program.",
-        btnSend: "Send", btnAccept: "Accept All", btnReject: "Reject", btnSettings: "Preferences", correctTxt: "Correct!", wrongTxt: "Incorrect."
+        aboutDesc: "This platform was developed as an educational and scientific tool focused on the dissemination of data on regenerative agriculture and biological pest management.",
+        btnSend: "Send", btnAccept: "Accept All", btnReject: "Reject", correctTxt: "Correct!", wrongTxt: "Incorrect."
     },
     es: {
         logo: "Agro<span>Sustentable</span>", navHeader: "Navegación", lnkInicio: "Inicio", lnkDados: "Datos Generales",
@@ -69,11 +69,11 @@ const translations = {
         evalTitle: "Evalúe nuestro sitio", evalBad: "Lo sentimos. ¿Cómo podemos mejorar?", evalThanks: "¡Gracias por su evaluación! 💚",
         refTitle: "Referencias y Fuentes Oficiales", refC1: "Directrices Nacionales para el Manejo Integrado de Plagas (MIP).",
         refC2: "Informes globales sobre el uso seguro de insumos biológicos en la agricultura.",
-        cookieMsg: "¡Valoramos su privacidad! Utilizamos cookies y tecnologías similares para recopilar datos de navegación y mejorar el rendimiento de acuerdo con nuestra Política de Cookies.", 
+        cookieMsg: "¡Valoramos su privacidad! Utilizamos cookies para recopilar datos de navegación esenciales, mejorar su experiencia en el sitio de acuerdo con nuestra Política de Privacidad.", 
         copy: "&copy; 2026 AgroSustentable. Todos los derechos reservados.",
         aboutTitle: "Sobre este Ecosistema Digital",
         aboutDesc: "Esta plataforma fue desarrollada como una herramienta educativa y científica enfocada en la difusión de datos sobre agricultura regenerativa y manejo biológico de plagas.",
-        btnSend: "Enviar", btnAccept: "Aceptar Todo", btnReject: "Rechazar", btnSettings: "Preferencias", correctTxt: "¡Correcto!", wrongTxt: "Incorrecto."
+        btnSend: "Enviar", btnAccept: "Aceptar Todo", btnReject: "Rechazar", correctTxt: "¡Correcto!", wrongTxt: "Incorrecto."
     },
     fr: {
         logo: "Agro<span>Durable</span>", navHeader: "Navigation", lnkInicio: "Accueil", lnkDados: "Données Générales",
@@ -89,15 +89,15 @@ const translations = {
         pracTitle: "Substitutions Intelligentes sur le Terrain", fltAll: "Voir Tout", fltBio: "Gestion Biologique", fltQui: "Risques Chimiques",
         cardQBadge: "Impact Conventionnel", cardQTitle: "Pesticides Chimiques Lourds", cardQLbl: "Dégradation des Sols",
         cardBBadge: "Alternative Écologique", cardBTitle: "Macrobiologiques (Coccinelles)", cardBLbl: "Préservation de l'Eau",
-        quizTitle: "Défi des Connaissances", quizSubtitle: "Testez vos connaissances sur l'impact des pratiques agroécologiques:",
+        quizTitle: "Défi des Connaissances", quizSubtitle: "Testez vos connaissances sur l'impact des pratiques agroecologiques:",
         evalTitle: "Évaluez notre site", evalBad: "Nous sommes désolés. Comment pouvons-nous nous améliorer?", evalThanks: "Merci pour votre évaluation! 💚",
         refTitle: "Références et Sources Oficielles", refC1: "Directives Nationales pour la Lutte Intégrée contre les Ravageurs (MIP).",
         refC2: "Rapports mondiaux sur l'utilisation sécurisée des intrants biologiques en agriculture.",
-        cookieMsg: "Nous apprécions votre vie privée! Nous utilisons des cookies et des technologies similaires pour collecter des données de navigation conformément à notre Politique relative aux cookies.", 
+        cookieMsg: "Nous apprécions votre vie privée! Nous utilisons des cookies pour collecter des données essentielles de navigation afin d'améliorer votre expérience conformément à notre Politique de Confidentialité.", 
         copy: "&copy; 2026 AgroDurable. Tous droits réservés.",
         aboutTitle: "À Propos de cet Écosystème Numérique",
         aboutDesc: "Cette plateforme a été développée comme un outil pédagogique et scientifique axé sur la diffusion de données sur l'agriculture régénérative.",
-        btnSend: "Envoyer", btnAccept: "Tout Accepter", btnReject: "Refuser", btnSettings: "Options", correctTxt: "Correct!", wrongTxt: "Incorrect."
+        btnSend: "Envoyer", btnAccept: "Tout Accepter", btnReject: "Refuser", correctTxt: "Correct!", wrongTxt: "Incorrect."
     }
 };
 
@@ -106,7 +106,7 @@ const quizData = [
         question: { 
             pt: "Qual é o principal objetivo do Controle Biológico na agricultura?", 
             en: "What is the main objective of Biological Control in farming?",
-            es: "¿Cuál es el objetivo principal del Control Biológico en la agricultura?",
+            es: "¿Cuál es el objetivo principal del Control Biológico na agricultura?",
             fr: "Quel est l'objectif principal du Contrôle Biologique en agriculture?"
         },
         options: {
@@ -146,7 +146,6 @@ function applyTranslations() {
     const lang = currentLang;
     const t = translations[lang] || translations['pt'];
 
-    // Verificação de Segurança para cada ID antes de aplicar tradução
     if(document.getElementById('txt-logo')) document.getElementById('txt-logo').innerHTML = t.logo;
     if(document.getElementById('txt-footer-logo')) document.getElementById('txt-footer-logo').innerHTML = t.logo;
     if(document.getElementById('txt-nav-header')) document.getElementById('txt-nav-header').textContent = t.navHeader;
@@ -193,7 +192,6 @@ function applyTranslations() {
     if(document.getElementById('txt-about-title')) document.getElementById('txt-about-title').textContent = t.aboutTitle;
     if(document.getElementById('txt-about-desc')) document.getElementById('txt-about-desc').textContent = t.aboutDesc;
 
-    // Elementos Variáveis de Cookies e Avaliação Otimizada
     if(document.getElementById('ui-eval-title')) document.getElementById('ui-eval-title').textContent = t.evalTitle;
     if(document.getElementById('ui-eval-bad')) document.getElementById('ui-eval-bad').textContent = t.evalBad;
     if(document.getElementById('ui-eval-thanks')) document.getElementById('ui-eval-thanks').textContent = t.evalThanks;
@@ -202,7 +200,6 @@ function applyTranslations() {
     if(document.getElementById('ui-cookie-txt')) document.getElementById('ui-cookie-txt').textContent = t.cookieMsg;
     if(document.getElementById('btn-accept-cookies')) document.getElementById('btn-accept-cookies').textContent = t.btnAccept;
     if(document.getElementById('btn-reject-cookies')) document.getElementById('btn-reject-cookies').textContent = t.btnReject;
-    if(document.getElementById('btn-settings-cookies')) document.getElementById('btn-settings-cookies').textContent = t.btnSettings;
 
     renderQuizQuestion();
 }
