@@ -408,3 +408,18 @@ function initScrollReveal() {
     }, { threshold: 0.05 });
     els.forEach(el => obs.observe(el));
 }
+// VERIFICAÇÃO E CONTROLE DOS COOKIES CONSERTADO
+function verificarCookies() {
+    // Se o usuário ainda NÃO tomou uma decisão (não salvou no navegador), o banner DEVE aparecer
+    if (localStorage.getItem('cookiesDecided') === 'true') {
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.classList.add('hidden');
+    }
+}
+
+function acceptCookies() {
+    // Salva que o usuário tomou a decisão e fecha o banner
+    localStorage.setItem('cookiesDecided', 'true');
+    const banner = document.getElementById('cookie-banner');
+    if(banner) banner.classList.add('hidden');
+}
