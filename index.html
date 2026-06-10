@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 — Práticas Sustentáveis</title>
+    <title>Agrinho 2026 — Gestão Sustentável</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,13 +33,13 @@
                     <li><a href="#inicio" id="lnk-inicio">Início</a></li>
                     <li><a href="#estatisticas" id="lnk-dados">Dados Gerais</a></li>
                     <li><a href="#infografico" id="lnk-passo">Passo a Passo</a></li>
-                    <li><a href="#alternativas" id="lnk-praticas">Práticas Práticas</a></li>
+                    <li><a href="#alternativas" id="lnk-praticas">Práticas do Campo</a></li>
                     <li><a href="#desafio" id="lnk-quiz">Quiz Educativo</a></li>
                     <li><a href="#fontes" id="lnk-referencias">Referências</a></li>
                 </ul>
                 
                 <div class="menu-contact">
-                    <div class="menu-header" id="txt-contato-header">Contacto</div>
+                    <div class="menu-header" id="txt-contato-header">Contato</div>
                     <a href="https://instagram.com" target="_blank" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a>
                     <a href="https://wa.me/seu-numero" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
@@ -64,8 +64,6 @@
                         <li><button data-lang-select="en">English</button></li>
                         <li><button data-lang-select="es">Español</button></li>
                         <li><button data-lang-select="fr">Français</button></li>
-                        <li><button data-lang-select="de">Deutsch</button></li>
-                        <li><button data-lang-select="it">Italiano</button></li>
                     </ul>
                 </div>
             </div>
@@ -188,48 +186,51 @@
                 </div>
             </div>
         </section>
-
-        <section id="descricao-projeto" class="content-section reveal desc-projeto-bloco">
-            <h3 id="txt-desc-proj-title">Sobre este Ecossistema</h3>
-            <p id="txt-desc-proj-content">Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.</p>
-        </section>
-
     </main>
 
-    <div id="avaliacao-container" class="eval-floating-window">
-        <button class="close-eval-btn" onclick="fecharAvaliacao()" aria-label="Fechar">✕</button>
-        <h3 id="txt-eval-title">Avalie sua Experiência</h3>
-        <p id="txt-eval-desc">O que achou do nosso ecossistema digital?</p>
-        
-        <div class="eval-emojis">
-            <button onclick="votarEmoji('ruim')">😢</button>
-            <button onclick="votarEmoji('regular')">😐</button>
-            <button onclick="votarEmoji('bom')">😊</button>
-            <button onclick="votarEmoji('excelente')">🤩</button>
-        </div>
-
-        <div id="eval-feedback-box" class="eval-feedback-box hidden">
-            <p id="eval-response-text"></p>
-            <div id="eval-negative-action" class="hidden">
-                <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2"></textarea>
-                <button class="btn-submit btn-eval-send-size" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
+    <div id="eval-widget" class="eval-box shadow">
+        <button class="close-btn" onclick="toggleEval()">×</button>
+        <div id="eval-screen-1">
+            <h4 id="ui-eval-title">Avalie sua experiência</h4>
+            <div class="emojis">
+                <button onclick="handleRating('bad')">😢</button>
+                <button onclick="handleRating('neutral')">😐</button>
+                <button onclick="handleRating('good')">🤩</button>
             </div>
+        </div>
+        <div id="eval-screen-bad" class="hidden">
+            <p id="ui-eval-bad">Lamentamos. Como podemos melhorar?</p>
+            <textarea id="eval-text" placeholder="Sugestão..."></textarea>
+            <button class="btn-primary" id="btn-send-eval" onclick="submitBadRating()">Enviar</button>
+        </div>
+        <div id="eval-screen-thanks" class="hidden">
+            <p id="ui-eval-thanks">Obrigado pela sua avaliação! 💚</p>
         </div>
     </div>
 
-    <div id="cookie-banner" class="cookie-premium-banner">
-        <div class="cookie-content">
-            <p id="txt-cookie-msg">Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.</p>
-            <button class="btn-submit" id="btn-cookie-accept" onclick="aceitarCookies()">Aceitar</button>
+    <div id="cookie-banner" class="cookie-bar">
+        <div class="container cookie-flex">
+            <p id="ui-cookie-txt">Utilizamos cookies para melhorar sua experiência acadêmica e garantir a navegação segura do ecossistema.</p>
+            <button onclick="acceptCookies()" class="btn-primary" id="btn-accept-cookies">Aceitar</button>
         </div>
     </div>
 
     <footer class="footer-premium">
-        <div class="container footer-bottom-flex">
-            <div class="logo">Agro<span>Sustentável</span></div>
-            <p id="txt-footer-copy">&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
-            <div class="footer-academic-meta">
-                <span>ODS 12 & 15 — ONU</span>
+        <div class="container">
+            <div class="footer-top-row">
+                <div class="logo" id="txt-footer-logo">Agro<span>Sustentável</span></div>
+                <div class="footer-academic-meta">
+                    <span>ODS 12 & 15 — ONU</span>
+                </div>
+            </div>
+            
+            <p id="txt-footer-copy" class="footer-copy-text">&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
+            
+            <hr class="footer-divider">
+            
+            <div class="footer-about-extended">
+                <h4 id="txt-about-title">Sobre este Ecossistema Digital</h4>
+                <p id="txt-about-desc">Esta plataforma foi desenvolvida como uma ferramenta educacional e científica focada na disseminação de dados sobre agricultura regenerativa e manejo biológico de pragas. O objetivo central é conscientizar a comunidade escolar e produtores rurais a respeito da viabilidade econômica da substituição de defensivos químicos por organismos macrobiológicos, promovendo a conservação dos polinizadores nativos, o equilíbrio dos solos agrícolas e a segurança alimentar a longo prazo em total conformidade com as diretrizes do Programa Agrinho.</p>
             </div>
         </div>
     </footer>

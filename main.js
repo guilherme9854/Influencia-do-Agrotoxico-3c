@@ -5,8 +5,8 @@ let currentQuestionIndex = 0;
 const translations = {
     pt: {
         logo: "Agro<span>Sustentável</span>", navHeader: "Navegação", lnkInicio: "Início", lnkDados: "Dados Gerais",
-        lnkPasso: "Passo a Passo", lnkPraticas: "Práticas Práticas", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referências",
-        contatoHeader: "Contacto", langHeader: "Escolha o Idioma", btnCriar: "Criar conta", btnEntrar: "Entrar",
+        lnkPasso: "Passo a Passo", lnkPraticas: "Práticas do Campo", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referências",
+        contatoHeader: "Contato", langHeader: "Escolha o Idioma", btnCriar: "Criar conta", btnEntrar: "Entrar",
         heroTag: "Sustentabilidade Racional", heroTitle: "O Futuro do Campo com Manejo Biológico",
         heroDesc: "Uma análise científica sobre como a substituição de defensivos químicos por defensores naturais protege a biodiversidade, reduz custos e garante alimentos mais saudáveis.",
         stat1: "Redução média nos custos de manejo", stat2: "Mais preservação de polinizadores", stat3: "Resíduos tóxicos no produto final",
@@ -18,15 +18,18 @@ const translations = {
         cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradação do Solo",
         cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Joaninhas)", cardBLbl: "Preservação de Água",
         quizTitle: "Desafio do Conhecimento", quizSubtitle: "Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:",
-        evalTitle: "Avalie sua Experiência", evalDesc: "O que achou do nosso ecossistema digital?", btnEvalSend: "Enviar para Sugestões",
+        evalTitle: "Avalie sua experiência", evalBad: "Lamentamos. Como podemos melhorar?", evalThanks: "Obrigado pela sua avaliação! 💚",
         refTitle: "Referências e Fontes Oficiais", refC1: "Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).",
         refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.",
-        descTitle: "Sobre este Ecossistema", descContent: "Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.",
-        cookieMsg: "Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados."
+        cookieMsg: "Utilizamos cookies para melhorar sua experiência acadêmica e garantir a navegação segura do ecossistema.", 
+        copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados.",
+        aboutTitle: "Sobre este Ecossistema Digital",
+        aboutDesc: "Esta plataforma foi desenvolvida como uma ferramenta educacional e científica focada na disseminação de dados sobre agricultura regenerativa e manejo biológico de pragas. O objetivo central é conscientizar a comunidade escolar e produtores rurais a respeito da viabilidade econômica da substituição de defensivos químicos por organismos macrobiológicos, promovendo a conservação dos polinizadores nativos, o equilíbrio dos solos agrícolas e a segurança alimentar a longo prazo em total conformidade com as diretrizes do Programa Agrinho.",
+        btnSend: "Enviar", btnAccept: "Aceitar", correctTxt: "Correto!", wrongTxt: "Incorreto."
     },
     en: {
         logo: "Agro<span>Sustainable</span>", navHeader: "Navigation", lnkInicio: "Home", lnkDados: "General Data",
-        lnkPasso: "Step by Step", lnkPraticas: "Practical Practices", lnkQuiz: "Educational Quiz", lnkReferencias: "References",
+        lnkPasso: "Step by Step", lnkPraticas: "Field Practices", lnkQuiz: "Educational Quiz", lnkReferencias: "References",
         contatoHeader: "Contact", langHeader: "Choose Language", btnCriar: "Create account", btnEntrar: "Sign in",
         heroTag: "Rational Sustainability", heroTitle: "The Future of the Field with Biological Management",
         heroDesc: "A scientific analysis of how replacing chemical pesticides with natural defenders protects biodiversity, reduces costs, and ensures healthier food.",
@@ -39,35 +42,93 @@ const translations = {
         cardQBadge: "Conventional Impact", cardQTitle: "Heavy Chemical Pesticides", cardQLbl: "Soil Degradation",
         cardBBadge: "Ecological Alternative", cardBTitle: "Macrobiologicals (Ladybugs)", cardBLbl: "Water Preservation",
         quizTitle: "Knowledge Challenge", quizSubtitle: "Test your knowledge about the impact of agroecological practices in the field:",
-        evalTitle: "Rate Your Experience", evalDesc: "What did you think of our digital ecosystem?", btnEvalSend: "Send to Suggestions",
+        evalTitle: "Rate your experience", evalBad: "We are sorry. How can we improve?", evalThanks: "Thank you for your rating! 💚",
         refTitle: "References and Official Sources", refC1: "National Guidelines for Integrated Pest Management (IPM).",
         refC2: "Global reports on the safe use of biological inputs in farming.",
-        descTitle: "About this Ecosystem", descContent: "This digital platform was developed to spread scientific and practical data on biological management and regenerative agriculture. Aligned with global sustainability goals, the project aims to educate farmers and students on the economic and environmental viability of the field's ecological transition.",
-        cookieMsg: "We use cookies to ensure the best experience within our sustainable ecosystem.", copy: "&copy; 2026 AgroSustentável. All rights reserved."
+        cookieMsg: "We use cookies to improve your academic experience and ensure secure navigation of the ecosystem.", 
+        copy: "&copy; 2026 AgroSustentável. All rights reserved.",
+        aboutTitle: "About this Digital Ecosystem",
+        aboutDesc: "This platform was developed as an educational and scientific tool focused on the dissemination of data on regenerative agriculture and biological pest management. The central objective is to raise awareness among the school community and rural producers regarding the economic viability of replacing chemical pesticides with macrobiological organisms, promoting the conservation of native pollinators, the balance of agricultural soils, and long-term food security in full compliance with the guidelines of the Agrinho Program.",
+        btnSend: "Send", btnAccept: "Accept", correctTxt: "Correct!", wrongTxt: "Incorrect."
+    },
+    es: {
+        logo: "Agro<span>Sustentable</span>", navHeader: "Navegación", lnkInicio: "Inicio", lnkDados: "Datos Generales",
+        lnkPasso: "Paso a Paso", lnkPraticas: "Prácticas de Campo", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referencias",
+        contatoHeader: "Contacto", langHeader: "Elegir Idioma", btnCriar: "Crear cuenta", btnEntrar: "Ingresar",
+        heroTag: "Sustentabilidad Racional", heroTitle: "El Futuro del Campo con Manejo Biológico",
+        heroDesc: "Un análisis científico sobre cómo la sustitución de defensivos químicos por defensores naturales protege la biodiversidad, reduce costos y garantiza alimentos más saludables.",
+        stat1: "Reducción promedio en costos de manejo", stat2: "Más preservación de polinizadores", stat3: "Residuos tóxicos en producto final",
+        stepTitle: "¿Cómo Funciona la Transición Sustentable?", stepInst: "Haga clic en las tarjetas de abajo para ver cada paso del proceso:",
+        stepC1T: "Monitoreo", stepC1D: "Identificación precisa de brotes de plagas antes de actuar.",
+        stepC2T: "Introducción", stepC2D: "Liberación controlada de enemigos naturales específicos.",
+        stepC3T: "Equilibrio", stepC3D: "La propia naturaleza controla la población de plagas.",
+        pracTitle: "Sustituciones Inteligentes en el Campo", fltAll: "Ver Todo", fltBio: "Manejo Biológico", fltQui: "Riesgos Químicos",
+        cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradación del Suelo",
+        cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Mariquitas)", cardBLbl: "Preservación del Agua",
+        quizTitle: "Desafío del Conocimiento", quizSubtitle: "Pruebe sus conocimientos sobre el impacto de las prácticas agroecológicas:",
+        evalTitle: "Evalúe su experiencia", evalBad: "Lo sentimos. ¿Cómo podemos mejorar?", evalThanks: "¡Gracias por su evaluación! 💚",
+        refTitle: "Referencias y Fuentes Oficiales", refC1: "Directrices Nacionales para el Manejo Integrado de Plagas (MIP).",
+        refC2: "Informes globales sobre el uso seguro de insumos biológicos en la agricultura.",
+        cookieMsg: "Utilizamos cookies para mejorar su experiencia académica y garantizar la navegación segura del ecosistema.", 
+        copy: "&copy; 2026 AgroSustentable. Todos los derechos reservados.",
+        aboutTitle: "Sobre este Ecosistema Digital",
+        aboutDesc: "Esta plataforma fue desarrollada como una herramienta educativa y científica enfocada en la difusión de datos sobre agricultura regenerativa y manejo biológico de plagas. El objetivo central es concientizar a la comunidad escolar y productores rurales sobre la viabilidad económica de la sustitución de agroquímicos.",
+        btnSend: "Enviar", btnAccept: "Aceptar", correctTxt: "¡Correcto!", wrongTxt: "Incorrecto."
+    },
+    fr: {
+        logo: "Agro<span>Durable</span>", navHeader: "Navigation", lnkInicio: "Accueil", lnkDados: "Données Générales",
+        lnkPasso: "Étape par Étape", lnkPraticas: "Pratiques de Terrain", lnkQuiz: "Quiz Éducatif", lnkReferencias: "Références",
+        contatoHeader: "Contact", langHeader: "Choisir la Langue", btnCriar: "Créer un compte", btnEntrar: "Connexion",
+        heroTag: "Durabilité Rationnelle", heroTitle: "L'Avenir des Champs avec la Gestion Biologique",
+        heroDesc: "Une analyse scientifique sur la façon dont le remplacement des pesticides chimiques par des défenseurs naturels protège la biodiversité.",
+        stat1: "Réduction moyenne des coûts de gestion", stat2: "Plus de préservation des pollinisateurs", stat3: "Résidus toxiques dans le produit final",
+        stepTitle: "Comment Fonctionne la Transition Durable?", stepInst: "Cliquez sur les cartes ci-dessous pour voir chaque étape:",
+        stepC1T: "Surveillance", stepC1D: "Identification précise des foyers de ravageurs avant d'agir.",
+        stepC2T: "Introduction", stepC2D: "Lâcher contrôlé d'ennemis naturels spécifiques.",
+        stepC3T: "Équilibre", stepC3D: "La nature elle-même contrôle la population de ravageurs.",
+        pracTitle: "Substitutions Intelligentes sur le Terrain", fltAll: "Voir Tout", fltBio: "Gestion Biologique", fltQui: "Risques Chimiques",
+        cardQBadge: "Impact Conventionnel", cardQTitle: "Pesticides Chimiques Lourds", cardQLbl: "Dégradation des Sols",
+        cardBBadge: "Alternative Écologique", cardBTitle: "Macrobiologiques (Coccinelles)", cardBLbl: "Préservation de l'Eau",
+        quizTitle: "Défi des Connaissances", quizSubtitle: "Testez vos connaissances sur l'impact des pratiques agroécologiques:",
+        evalTitle: "Évaluez votre expérience", evalBad: "Nous sommes désolés. Comment pouvons-nous nous améliorer?", evalThanks: "Merci pour votre évaluation! 💚",
+        refTitle: "Références et Sources Officielles", refC1: "Directives Nationales pour la Lutte Intégrée contre les Ravageurs (MIP).",
+        refC2: "Rapports mondiaux sur l'utilisation sécurisée des intrants biologiques en agriculture.",
+        cookieMsg: "Nous utilisons des cookies pour améliorer votre expérience académique et garantir une navigation sécurisée.", 
+        copy: "&copy; 2026 AgroDurable. Tous droits réservés.",
+        aboutTitle: "À Propos de cet Écosystème Numérique",
+        aboutDesc: "Cette plateforme a été développée comme un outil pédagogique et scientifique axé sur la diffusion de données sur l'agriculture régénérative.",
+        btnSend: "Envoyer", btnAccept: "Accepter", correctTxt: "Correct!", wrongTxt: "Incorrect."
     }
 };
 
 const quizData = [
     {
-        question: { pt: "Qual é o principal objetivo do Controle Biológico na agricultura?", en: "What is the main objective of Biological Control in farming?" },
+        question: { 
+            pt: "Qual é o principal objetivo do Controle Biológico na agricultura?", 
+            en: "What is the main objective of Biological Control in farming?",
+            es: "¿Cuál es el objetivo principal del Control Biológico en la agricultura?",
+            fr: "Quel est l'objectif principal du Contrôle Biologique en agriculture?"
+        },
         options: {
             pt: ["Eliminar toda a biodiversidade local para proteger as plantas.", "Utilizar inimigos naturais (como insetos benéficos) para controlar pragas.", "Aumentar o uso de herbicidas sintéticos na lavoura.", "Substituir a irrigação por produtos químicos concentrados."],
-            en: ["Eliminate all local biodiversity to protect plants.", "Use natural enemies (like beneficial insects) to control pests.", "Increase the use of synthetic herbicides in the field.", "Replace irrigation with concentrated chemical products."]
+            en: ["Eliminate all local biodiversity to protect plants.", "Use natural enemies (like beneficial insects) to control pests.", "Increase the use of synthetic herbicides in the field.", "Replace irrigation with concentrated chemical products."],
+            es: ["Eliminar toda la biodiversidad local para proteger las plantas.", "Utilizar enemigos naturales (como insectos benéficos) para controlar plagas.", "Aumentar el uso de herbicidas sintéticos en el cultivo.", "Sustituir el riego por productos químicos concentrados."],
+            fr: ["Éliminer toute la biodiversité locale pour protéger les plantes.", "Utiliser des ennemis naturels (comme des insectes utiles) pour contrôler les ravageurs.", "Augmenter l'utilisation d'herbicides synthétiques.", "Remplacer l'irrigation par des produits chimiques concentrés."]
         }, correct: 1
     },
     {
-        question: { pt: "Qual inseto é famoso por atuar como predador natural de pulgões?", en: "Which insect is famous for acting as a natural predator of aphids?" },
+        question: { 
+            pt: "Qual inseto é famoso por atuar como predador natural de pulgões?", 
+            en: "Which insect is famous for acting as a natural predator of aphids?",
+            es: "¿Qué insecto es famoso por actuar como depredador natural de pulgones?",
+            fr: "Quel insecte est célèbre pour être un prédateur naturel des pucerons?"
+        },
         options: {
-            pt: ["Lagarta do cartucho", "Mosca doméstica comum", "Joaninha maculado", "Gafanhoto migratório"],
-            en: ["Fall armyworm", "Common housefly", "Spotted ladybug", "Migratory locust"]
+            pt: ["Lagarta do cartucho", "Mosca doméstica comum", "Joaninha maculada", "Gafanhoto migratório"],
+            en: ["Fall armyworm", "Common housefly", "Spotted ladybug", "Migratory locust"],
+            es: ["Oruga de la col", "Mosca doméstica común", "Mariquita manchada", "Langosta migratoria"],
+            fr: ["Chenille légionnaire", "Mouche domestique commune", "Coccinelle tachetée", "Criquet migrateur"]
         }, correct: 2
-    },
-    {
-        question: { pt: "O manejo de base biológica reduz prioritariamente qual impacto?", en: "Biologically based management primarily reduces which impact?" },
-        options: {
-            pt: ["A quantidade de matéria orgânica saudável no solo.", "O acúmulo e descarte de resíduos tóxicos químicos.", "A reciclagem de embalagens plásticas descartáveis.", "O fluxo natural de água da chuva limpa."],
-            en: ["The amount of healthy organic matter in the soil.", "The accumulation and disposal of toxic chemical residues.", "The recycling of disposable plastic packaging.", "The natural flow of clean rainwater."]
-        }, correct: 1
     }
 ];
 
@@ -78,74 +139,79 @@ document.addEventListener("DOMContentLoaded", () => {
     initQuizSystem();
     initScrollReveal();
     verificarCookies();
+    applyTranslations(); // Aplica a tradução inicial padrão (pt)
 });
 
 function applyTranslations() {
     const lang = currentLang;
     const t = translations[lang] || translations['pt'];
 
-    document.getElementById('txt-logo').innerHTML = t.logo;
-    document.getElementById('txt-nav-header').textContent = t.navHeader;
-    document.getElementById('lnk-inicio').textContent = t.lnkInicio;
-    document.getElementById('lnk-dados').textContent = t.lnkDados;
-    document.getElementById('lnk-passo').textContent = t.lnkPasso;
-    document.getElementById('lnk-praticas').textContent = t.lnkPraticas;
-    document.getElementById('lnk-quiz').textContent = t.lnkQuiz;
-    document.getElementById('lnk-referencias').textContent = t.lnkReferencias;
-    document.getElementById('txt-contato-header').textContent = t.contatoHeader;
-    document.getElementById('txt-lang-header').textContent = t.langHeader;
-    document.getElementById('btn-criar-conta').textContent = t.btnCriar;
-    document.getElementById('btn-entrar').textContent = t.btnEntrar;
-    document.getElementById('txt-hero-tag').textContent = t.heroTag;
-    document.getElementById('txt-hero-title').textContent = t.heroTitle;
-    document.getElementById('txt-hero-desc').textContent = t.heroDesc;
-    document.getElementById('txt-stat-1').textContent = t.stat1;
-    document.getElementById('txt-stat-2').textContent = t.stat2;
-    document.getElementById('txt-stat-3').textContent = t.stat3;
-    document.getElementById('txt-step-title').textContent = t.stepTitle;
-    document.getElementById('txt-step-inst').textContent = t.stepInst;
-    document.getElementById('txt-step-c1-t').textContent = t.stepC1T;
-    document.getElementById('txt-step-c1-d').textContent = t.stepC1D;
-    document.getElementById('txt-step-c2-t').textContent = t.stepC2T;
-    document.getElementById('txt-step-c2-d').textContent = t.stepC2D;
-    document.getElementById('txt-step-c3-t').textContent = t.stepC3T;
-    document.getElementById('txt-step-c3-d').textContent = t.stepC3D;
-    document.getElementById('txt-prac-title').textContent = t.pracTitle;
-    document.getElementById('btn-flt-all').textContent = t.fltAll;
-    document.getElementById('btn-flt-bio').textContent = t.fltBio;
-    document.getElementById('btn-flt-qui').textContent = t.fltQui;
-    document.getElementById('txt-card-q-badge').textContent = t.cardQBadge;
-    document.getElementById('txt-card-q-title').textContent = t.cardQTitle;
-    document.getElementById('txt-card-q-lbl').textContent = t.cardQLbl;
-    document.getElementById('txt-card-b-badge').textContent = t.cardBBadge;
-    document.getElementById('txt-card-b-title').textContent = t.cardBTitle;
-    document.getElementById('txt-card-b-lbl').textContent = t.cardBLbl;
-    document.getElementById('txt-quiz-title').textContent = t.quizTitle;
-    document.getElementById('txt-quiz-subtitle').textContent = t.quizSubtitle;
-    document.getElementById('txt-eval-title').textContent = t.evalTitle;
-    document.getElementById('txt-eval-desc').textContent = t.evalDesc;
-    document.getElementById('btn-eval-send').textContent = t.btnEvalSend;
-    document.getElementById('txt-ref-title').textContent = t.refTitle;
-    document.getElementById('txt-ref-c1').textContent = t.refC1;
-    document.getElementById('txt-ref-c2').textContent = t.refC2;
-    document.getElementById('txt-desc-proj-title').textContent = t.descTitle;
-    document.getElementById('txt-desc-proj-content').textContent = t.descContent;
-    document.getElementById('txt-cookie-msg').textContent = t.cookieMsg;
-    document.getElementById('txt-footer-copy').innerHTML = t.copy;
+    // Traduções Básicas Estruturais com Verificação de Segurança de Elemento
+    if(document.getElementById('txt-logo')) document.getElementById('txt-logo').innerHTML = t.logo;
+    if(document.getElementById('txt-footer-logo')) document.getElementById('txt-footer-logo').innerHTML = t.logo;
+    if(document.getElementById('txt-nav-header')) document.getElementById('txt-nav-header').textContent = t.navHeader;
+    if(document.getElementById('lnk-inicio')) document.getElementById('lnk-inicio').textContent = t.lnkInicio;
+    if(document.getElementById('lnk-dados')) document.getElementById('lnk-dados').textContent = t.lnkDados;
+    if(document.getElementById('lnk-passo')) document.getElementById('lnk-passo').textContent = t.lnkPasso;
+    if(document.getElementById('lnk-praticas')) document.getElementById('lnk-praticas').textContent = t.lnkPraticas;
+    if(document.getElementById('lnk-quiz')) document.getElementById('lnk-quiz').textContent = t.lnkQuiz;
+    if(document.getElementById('lnk-referencias')) document.getElementById('lnk-referencias').textContent = t.lnkReferencias;
+    if(document.getElementById('txt-contato-header')) document.getElementById('txt-contato-header').textContent = t.contatoHeader;
+    if(document.getElementById('txt-lang-header')) document.getElementById('txt-lang-header').textContent = t.langHeader;
+    if(document.getElementById('btn-criar-conta')) document.getElementById('btn-criar-conta').textContent = t.btnCriar;
+    if(document.getElementById('btn-entrar')) document.getElementById('btn-entrar').textContent = t.btnEntrar;
+    if(document.getElementById('txt-hero-tag')) document.getElementById('txt-hero-tag').textContent = t.heroTag;
+    if(document.getElementById('txt-hero-title')) document.getElementById('txt-hero-title').textContent = t.heroTitle;
+    if(document.getElementById('txt-hero-desc')) document.getElementById('txt-hero-desc').textContent = t.heroDesc;
+    if(document.getElementById('txt-stat-1')) document.getElementById('txt-stat-1').textContent = t.stat1;
+    if(document.getElementById('txt-stat-2')) document.getElementById('txt-stat-2').textContent = t.stat2;
+    if(document.getElementById('txt-stat-3')) document.getElementById('txt-stat-3').textContent = t.stat3;
+    if(document.getElementById('txt-step-title')) document.getElementById('txt-step-title').textContent = t.stepTitle;
+    if(document.getElementById('txt-step-inst')) document.getElementById('txt-step-inst').textContent = t.stepInst;
+    if(document.getElementById('txt-step-c1-t')) document.getElementById('txt-step-c1-t').textContent = t.stepC1T;
+    if(document.getElementById('txt-step-c1-d')) document.getElementById('txt-step-c1-d').textContent = t.stepC1D;
+    if(document.getElementById('txt-step-c2-t')) document.getElementById('txt-step-c2-t').textContent = t.stepC2T;
+    if(document.getElementById('txt-step-c2-d')) document.getElementById('txt-step-c2-d').textContent = t.stepC2D;
+    if(document.getElementById('txt-step-c3-t')) document.getElementById('txt-step-c3-t').textContent = t.stepC3T;
+    if(document.getElementById('txt-step-c3-d')) document.getElementById('txt-step-c3-d').textContent = t.stepC3D;
+    if(document.getElementById('txt-prac-title')) document.getElementById('txt-prac-title').textContent = t.pracTitle;
+    if(document.getElementById('btn-flt-all')) document.getElementById('btn-flt-all').textContent = t.fltAll;
+    if(document.getElementById('btn-flt-bio')) document.getElementById('btn-flt-bio').textContent = t.fltBio;
+    if(document.getElementById('btn-flt-qui')) document.getElementById('btn-flt-qui').textContent = t.fltQui;
+    if(document.getElementById('txt-card-q-badge')) document.getElementById('txt-card-q-badge').textContent = t.cardQBadge;
+    if(document.getElementById('txt-card-q-title')) document.getElementById('txt-card-q-title').textContent = t.cardQTitle;
+    if(document.getElementById('txt-card-q-lbl')) document.getElementById('txt-card-q-lbl').textContent = t.cardQLbl;
+    if(document.getElementById('txt-card-b-badge')) document.getElementById('txt-card-b-badge').textContent = t.cardBBadge;
+    if(document.getElementById('txt-card-b-title')) document.getElementById('txt-card-b-title').textContent = t.cardBTitle;
+    if(document.getElementById('txt-card-b-lbl')) document.getElementById('txt-card-b-lbl').textContent = t.cardBLbl;
+    if(document.getElementById('txt-quiz-title')) document.getElementById('txt-quiz-title').textContent = t.quizTitle;
+    if(document.getElementById('txt-quiz-subtitle')) document.getElementById('txt-quiz-subtitle').textContent = t.quizSubtitle;
+    if(document.getElementById('txt-ref-title')) document.getElementById('txt-ref-title').textContent = t.refTitle;
+    if(document.getElementById('txt-ref-c1')) document.getElementById('txt-ref-c1').textContent = t.refC1;
+    if(document.getElementById('txt-ref-c2')) document.getElementById('txt-ref-c2').textContent = t.refC2;
+    if(document.getElementById('txt-footer-copy')) document.getElementById('txt-footer-copy').innerHTML = t.copy;
+    if(document.getElementById('txt-about-title')) document.getElementById('txt-about-title').textContent = t.aboutTitle;
+    if(document.getElementById('txt-about-desc')) document.getElementById('txt-about-desc').textContent = t.aboutDesc;
+
+    // Elementos Mutáveis do Widget de Cookies e Avaliação (Evita travar o script)
+    if(document.getElementById('ui-eval-title')) document.getElementById('ui-eval-title').textContent = t.evalTitle;
+    if(document.getElementById('ui-eval-bad')) document.getElementById('ui-eval-bad').textContent = t.evalBad;
+    if(document.getElementById('ui-eval-thanks')) document.getElementById('ui-eval-thanks').textContent = t.evalThanks;
+    if(document.getElementById('btn-send-eval')) document.getElementById('btn-send-eval').textContent = t.btnSend;
+    if(document.getElementById('ui-cookie-txt')) document.getElementById('ui-cookie-txt').textContent = t.cookieMsg;
+    if(document.getElementById('btn-accept-cookies')) document.getElementById('btn-accept-cookies').textContent = t.btnAccept;
 
     renderQuizQuestion();
 }
 
 function initLanguageSystem() {
     const options = document.querySelectorAll('[data-lang-select]');
-    const menuLang = document.getElementById('lang-menu');
-    const toggleLang = document.getElementById('menu-lang-toggle');
-
     options.forEach(opt => {
-        opt.addEventListener('click', () => {
+        opt.addEventListener('click', (e) => {
+            e.stopPropagation();
             currentLang = opt.getAttribute('data-lang-select');
-            menuLang.classList.remove('active');
-            toggleLang.classList.remove('active');
+            document.getElementById('lang-menu').classList.remove('active');
+            document.getElementById('menu-lang-toggle').classList.remove('active');
             applyTranslations();
         });
     });
@@ -162,10 +228,12 @@ function initMenusLaterais() {
         burgerMain.classList.toggle('active');
         mainMenu.classList.toggle('active');
         langMenu.classList.remove('active');
+        burgerLang.classList.remove('active');
     });
 
     burgerLang.addEventListener('click', (e) => {
         e.stopPropagation();
+        burgerLang.classList.toggle('active');
         langMenu.classList.toggle('active');
         burgerMain.classList.remove('active');
         mainMenu.classList.remove('active');
@@ -174,6 +242,7 @@ function initMenusLaterais() {
     document.addEventListener('click', () => {
         burgerMain.classList.remove('active');
         mainMenu.classList.remove('active');
+        burgerLang.classList.remove('active');
         langMenu.classList.remove('active');
     });
 }
@@ -186,7 +255,6 @@ function initQuizSystem() {
             renderQuizQuestion();
         });
     }
-    renderQuizQuestion();
 }
 
 function renderQuizQuestion() {
@@ -194,6 +262,7 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options');
     const feedbackEl = document.getElementById('quiz-feedback');
     const nextBtn = document.getElementById('btn-next-quiz');
+    const t = translations[currentLang] || translations['pt'];
 
     if (!questionEl || !optionsContainer) return;
 
@@ -223,13 +292,13 @@ function renderQuizQuestion() {
             if (index === currentQuiz.correct) {
                 button.classList.add('correct');
                 feedbackEl.className = "quiz-feedback success";
-                feedbackEl.textContent = "Correto!";
+                feedbackEl.textContent = t.correctTxt;
                 quizScore++;
             } else {
                 button.classList.add('wrong');
                 buttons[currentQuiz.correct].classList.add('correct');
                 feedbackEl.className = "quiz-feedback error";
-                feedbackEl.textContent = "Incorreto.";
+                feedbackEl.textContent = t.wrongTxt;
             }
             feedbackEl.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
@@ -241,12 +310,12 @@ function renderQuizQuestion() {
 function showQuizFinished() {
     const questionEl = document.getElementById('quiz-question');
     const optionsContainer = document.getElementById('quiz-options');
-    if (questionEl) questionEl.textContent = "Desafio Concluído!";
+    if (questionEl) questionEl.textContent = currentLang === 'en' ? "Challenge Completed!" : "Desafio Concluído!";
     if (optionsContainer) {
         optionsContainer.innerHTML = `
             <div style="text-align: center; padding: 10px 0;">
-                <p style="font-size: 1.1rem; font-weight: bold; color: var(--accent);">Pontuação Final: ${quizScore} / ${quizData.length}</p>
-                <button class="btn-submit" style="margin-top: 14px;" onclick="reiniciarQuiz()">Tentar Novamente</button>
+                <p style="font-size: 1.1rem; font-weight: bold; color: var(--accent);">${currentLang === 'en' ? 'Final Score' : 'Pontuação Final'}: ${quizScore} / ${quizData.length}</p>
+                <button class="btn-submit" style="margin-top: 14px;" onclick="reiniciarQuiz()">${currentLang === 'en' ? 'Try Again' : 'Tentar Novamente'}</button>
             </div>
         `;
     }
@@ -258,44 +327,40 @@ function reiniciarQuiz() {
     renderQuizQuestion();
 }
 
-function votarEmoji(voto) {
-    const feedbackBox = document.getElementById('eval-feedback-box');
-    const responseText = document.getElementById('eval-response-text');
-    const negativeAction = document.getElementById('eval-negative-action');
-
-    feedbackBox.classList.remove('hidden');
-
-    if (voto === 'ruim' || voto === 'regular') {
-        responseText.textContent = "O que podemos melhorar no ecossistema?";
-        negativeAction.classList.remove('hidden');
+function handleRating(type) {
+    const s1 = document.getElementById('eval-screen-1');
+    if (type === 'bad') {
+        s1.classList.add('hidden');
+        document.getElementById('eval-screen-bad').classList.remove('hidden');
     } else {
-        responseText.textContent = "Muito obrigado pelo seu feedback positivo!";
-        negativeAction.classList.add('hidden');
+        s1.classList.add('hidden');
+        document.getElementById('eval-screen-thanks').classList.remove('hidden');
+        setTimeout(toggleEval, 3000);
     }
 }
 
-function enviarParaSugestao() {
-    const msg = document.getElementById('eval-textarea').value;
-    if(msg.trim() !== "") {
-        alert("Obrigado pela sugestão!");
-        document.getElementById('eval-textarea').value = "";
-        fecharAvaliacao();
-    }
+function submitBadRating() {
+    document.getElementById('eval-screen-bad').classList.add('hidden');
+    document.getElementById('eval-screen-thanks').classList.remove('hidden');
+    setTimeout(toggleEval, 3000);
 }
 
-function fecharAvaliacao() {
-    document.getElementById('avaliacao-container').classList.add('hidden');
+function toggleEval() {
+    const widget = document.getElementById('eval-widget');
+    if(widget) widget.classList.add('hidden');
 }
 
 function verificarCookies() {
-    if (localStorage.getItem('cookiesAceitos') === 'true') {
-        document.getElementById('cookie-banner').classList.add('hidden');
+    if (localStorage.getItem('cookiesAccepted') === 'true') {
+        const banner = document.getElementById('cookie-banner');
+        if(banner) banner.classList.add('hidden');
     }
 }
 
-function aceitarCookies() {
-    localStorage.setItem('cookiesAceitos', 'true');
-    document.getElementById('cookie-banner').classList.add('hidden');
+function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    const banner = document.getElementById('cookie-banner');
+    if(banner) banner.classList.add('hidden');
 }
 
 function initTheme() {
