@@ -6,7 +6,7 @@
     <title>Agrinho 2026 - Práticas Sustentáveis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-mode">
@@ -27,20 +27,27 @@
             </div>
 
             <div class="nav-menu">
-                <div class="menu-header">Navegação</div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#estatisticas">Dados Gerais</a></li>
-                    <li><a href="#infografico">Passo a Passo</a></li>
-                    <li><a href="#alternativas">Práticas</a></li>
-                    <li><a href="#desafio">Quiz Educativo</a></li>
-                    <li><a href="#fontes">Referências</a></li>
-                </ul>
+                <div>
+                    <div class="menu-header">Navegação</div>
+                    <ul class="nav-links">
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#estatisticas">Dados Gerais</a></li>
+                        <li><a href="#infografico">Passo a Passo</a></li>
+                        <li><a href="#alternativas">Práticas</a></li>
+                        <li><a href="#desafio">Quiz Educativo</a></li>
+                        <li><a href="#sugestoes">Sugestões</a></li>
+                        <li><a href="#fontes">Referências</a></li>
+                    </ul>
+                </div>
                 
-                <div class="menu-contact">
-                    <div class="menu-header">Contacto</div>
-                    <a href="https://instagram.com" target="_blank" class="contact-link">📸 Instagram</a>
-                    <a href="https://wa.me/seu-numero" target="_blank" class="contact-link">💬 WhatsApp</a>
+                <div class="menu-contact-box">
+                    <div class="menu-header">Canais de Contato</div>
+                    <a href="https://instagram.com" target="_blank" class="social-btn instagram-btn">
+                        <span class="social-icon">📸</span> Instagram
+                    </a>
+                    <a href="https://wa.me/" target="_blank" class="social-btn whatsapp-btn">
+                        <span class="social-icon">💬</span> WhatsApp
+                    </a>
                 </div>
             </div>
 
@@ -151,56 +158,103 @@
         </section>
 
         <section id="desafio" class="content-section reveal">
-            <div class="card">
+            <div class="card quiz-card-box">
                 <h2>Desafio do Conhecimento</h2>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:</p>
+                <p class="section-instruction">Responda às perguntas abaixo e teste seu nível de conhecimento agroecológico:</p>
                 
                 <div id="quiz-container">
-                    <h3 id="quiz-question" style="font-size: 1rem; margin-bottom: 12px;">--</h3>
+                    <div class="quiz-header-meta">
+                        <span id="quiz-progress">Pergunta 1 de 3</span>
+                        <span id="quiz-score-live">Acertos: 0</span>
+                    </div>
+                    <h3 id="quiz-question">--</h3>
                     <div id="quiz-options" class="quiz-options"></div>
                     <div id="quiz-feedback" class="quiz-feedback hidden"></div>
-                    <button id="btn-next-quiz" class="btn-submit hidden" style="margin-top: 15px; width: auto;">Avançar</button>
+                    <button id="btn-next-quiz" class="btn-submit hidden">Avançar</button>
                 </div>
+            </div>
+        </section>
+
+        <section id="sugestoes" class="content-section reveal">
+            <div class="card email-box-card">
+                <h2>Central de Sugestões</h2>
+                <p class="section-instruction">Colabore com o nosso projeto enviando suas ideias ou dúvidas sobre agroecologia:</p>
+                <form id="email-form" onsubmit="handleEmailSubmit(event)">
+                    <div class="form-group">
+                        <input type="email" id="user-email" placeholder="Seu e-mail profissional ou acadêmico" required class="input-premium">
+                        <textarea id="user-message" placeholder="Escreva aqui sua sugestão para o manejo sustentável..." required class="input-premium textarea-premium"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" style="width: 100%; margin-top: 10px;">Enviar Sugestão</button>
+                </form>
+                <div id="email-feedback" class="quiz-feedback success hidden">Sugestão enviada com sucesso! Obrigado por colaborar.</div>
             </div>
         </section>
 
         <section id="fontes" class="content-section reveal">
             <h2>Referências e Fontes Oficiais</h2>
-            <div class="references-grid">
-                <div class="ref-item">
-                    <div class="ref-icon">📊</div>
-                    <div>
-                        <h4>EMBRAPA</h4>
-                        <p>Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).</p>
-                    </div>
+            <div class="references-clean-list">
+                <div class="ref-clean-card">
+                    <div class="ref-badge-node">EMBRAPA</div>
+                    <p>Empresa Brasileira de Pesquisa Agropecuária. <em>Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP)</em>. Ministério da Agricultura e Pecuária.</p>
                 </div>
-                <div class="ref-item">
-                    <div class="ref-icon">🌿</div>
-                    <div>
-                        <h4>FAO Organização</h4>
-                        <p>Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.</p>
-                    </div>
+                <div class="ref-clean-card">
+                    <div class="ref-badge-node">FAO</div>
+                    <p>Organização das Nações Unidas para a Alimentação e a Agricultura. <em>Relatórios globais sobre o uso seguro e eficiente de insumos biológicos na lavoura moderna</em>.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="sobre" class="sobre-escondido reveal">
-            <p><strong>Desenvolvedor Principal:</strong> Luiz Felipe Pedracoli | <strong>Instituição:</strong> Sua Escola/Colégio | <strong>Orientação:</strong> Nome do Professor(a) | <strong>Iniciativa:</strong> Programa Agrinho 2026</p>
         </section>
 
     </main>
 
     <footer class="footer-premium">
         <div class="container footer-content-wrap">
+            <div class="footer-top-description">
+                <div class="logo">Agro<span>Sustentável</span></div>
+                <p class="site-long-desc">
+                    O portal AgroSustentável é uma plataforma educacional desenvolvida especialmente para o Concurso Agrinho 2026. Nosso objetivo é difundir dados científicos, análises práticas e alternativas viáveis ao uso de defensivos químicos tradicionais, provando que o manejo biológico e a preservação dos ecossistemas são os pilares para o futuro da agricultura mundial.
+                </p>
+            </div>
+            <hr class="footer-divider">
             <div class="footer-bottom-flex">
-                <div class="logo" style="font-size: 1rem;">Agro<span>Sustentável</span></div>
                 <p>&copy; 2026 AgroSustentável. Todos os direitos reservados aos autores.</p>
                 <div class="footer-academic-meta">
-                    <span>ODS 12 & 15 - ONU</span>
+                    <span>Foco ODS 12 & 15 - ONU</span>
                 </div>
             </div>
         </div>
     </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p>Utilizamos cookies para otimizar e aprimorar sua experiência de navegação acadêmica no portal do projeto Agrinho 2026.</p>
+            <div class="cookie-actions">
+                <button id="cookie-decline-btn" class="btn-cookie btn-cookie-decline">Recusar</button>
+                <button id="cookie-accept-btn" class="btn-cookie btn-cookie-accept">Aceitar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="emoji-feedback-widget" class="feedback-widget cookie-above">
+        <button id="feedback-trigger-btn" class="feedback-trigger">⭐ Avaliar Site</button>
+        <div id="feedback-card" class="feedback-card hidden">
+            <div id="feedback-screen-voting">
+                <div class="feedback-header">
+                    <h4>O que achou do site?</h4>
+                    <button class="feedback-close close-widget-action">×</button>
+                </div>
+                <div class="feedback-emojis">
+                    <button class="emoji-btn" onclick="submitEmojiVote(1)">😢</button>
+                    <button class="emoji-btn" onclick="submitEmojiVote(2)">🙁</button>
+                    <button class="emoji-btn" onclick="submitEmojiVote(3)">😐</button>
+                    <button class="emoji-btn" onclick="submitEmojiVote(4)">🙂</button>
+                    <button class="emoji-btn" onclick="submitEmojiVote(5)">🤩</button>
+                </div>
+            </div>
+            <div id="feedback-screen-thanks" class="hidden">
+                <p class="feedback-thanks">Obrigado pelo seu voto! 🌱</p>
+            </div>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
