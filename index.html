@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="light-mode">
@@ -39,8 +40,8 @@
                 
                 <div class="menu-contact">
                     <div class="menu-header" id="txt-contato-header">Contacto</div>
-                    <a href="https://instagram.com" target="_blank" class="contact-link">📸 Instagram</a>
-                    <a href="https://wa.me/seu-numero" target="_blank" class="contact-link">💬 WhatsApp</a>
+                    <a href="https://instagram.com" target="_blank" class="contact-link"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://wa.me/seu-numero" target="_blank" class="contact-link"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
             </div>
 
@@ -53,18 +54,18 @@
                 </div>
 
                 <button class="hamburger-lang" id="menu-lang-toggle" aria-label="Mudar Idioma">
-                    🌐
+                    <i class="fas fa-globe"></i>
                 </button>
 
                 <div class="lang-side-menu" id="lang-menu">
                     <div class="menu-header" id="txt-lang-header">Escolha o Idioma</div>
                     <ul class="lang-links">
-                        <li><button data-lang-select="pt">🇵🇹 Português</button></li>
-                        <li><button data-lang-select="en">🇺🇸 English</button></li>
-                        <li><button data-lang-select="es">🇪🇸 Español</button></li>
-                        <li><button data-lang-select="fr">🇫🇷 Français</button></li>
-                        <li><button data-lang-select="de">🇩🇪 Deutsch</button></li>
-                        <li><button data-lang-select="it">🇮🇹 Italiano</button></li>
+                        <li><button data-lang-select="pt">Português</button></li>
+                        <li><button data-lang-select="en">English</button></li>
+                        <li><button data-lang-select="es">Español</button></li>
+                        <li><button data-lang-select="fr">Français</button></li>
+                        <li><button data-lang-select="de">Deutsch</button></li>
+                        <li><button data-lang-select="it">Italiano</button></li>
                     </ul>
                 </div>
             </div>
@@ -168,42 +169,18 @@
             </div>
         </section>
 
-        <section id="avaliacao-container" class="content-section reveal">
-            <div class="card card-avaliacao" style="position: relative;">
-                <button class="close-eval-btn" onclick="fecharAvaliacao()" aria-label="Fechar">✕</button>
-                
-                <h2 id="txt-eval-title">Avalie sua Experiência</h2>
-                <p id="txt-eval-desc" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">O que achou do nosso ecossistema digital?</p>
-                
-                <div class="eval-emojis">
-                    <button onclick="votarEmoji('ruim')">😢</button>
-                    <button onclick="votarEmoji('regular')">😐</button>
-                    <button onclick="votarEmoji('bom')">😊</button>
-                    <button onclick="votarEmoji('excelente')">🤩</button>
-                </div>
-
-                <div id="eval-feedback-box" class="eval-feedback-box hidden">
-                    <p id="eval-response-text"></p>
-                    <div id="eval-negative-action" class="hidden" style="margin-top: 10px;">
-                        <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2" style="width:100%; border-radius:6px; padding:8px; border:var(--border); background:var(--bg-main); color:var(--text-main); font-family:inherit; margin-bottom:8px;"></textarea>
-                        <button class="btn-submit" style="font-size:0.8rem; padding:6px 12px;" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="fontes" class="content-section reveal">
             <h2 id="txt-ref-title">Referências e Fontes Oficiais</h2>
             <div class="references-grid">
                 <div class="ref-item">
-                    <div class="ref-icon">📊</div>
+                    <div class="ref-icon"><i class="fas fa-chart-bar" style="color: var(--accent);"></i></div>
                     <div>
                         <h4>EMBRAPA</h4>
                         <p id="txt-ref-c1">Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).</p>
                     </div>
                 </div>
                 <div class="ref-item">
-                    <div class="ref-icon">🌿</div>
+                    <div class="ref-icon"><i class="fas fa-leaf" style="color: var(--accent);"></i></div>
                     <div>
                         <h4>FAO Organização</h4>
                         <p id="txt-ref-c2">Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.</p>
@@ -212,11 +189,44 @@
             </div>
         </section>
 
+        <section id="descricao-projeto" class="content-section reveal desc-projeto-bloco">
+            <h3 id="txt-desc-proj-title">Sobre este Ecossistema</h3>
+            <p id="txt-desc-proj-content">Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.</p>
+        </section>
+
         <section id="sobre" class="sobre-escondido reveal">
-            <p><strong>Desenvolvedor Principal:</strong> Luiz Felipe Pedracoli | <strong>Instituição:</strong> Sua Escola/Colégio | <strong>Orientação:</strong> Nome do Professor(a) | <strong>Iniciativa:</strong> Programa Agrinho 2026</p>
+            <p><strong>Desenvolvedor Principal:</strong> Luiz Felipe Pedracoli | <strong>Iniciativa:</strong> Programa Agrinho 2026</p>
         </section>
 
     </main>
+
+    <div id="avaliacao-container" class="eval-floating-window shadow-card">
+        <button class="close-eval-btn" onclick="fecharAvaliacao()" aria-label="Fechar">✕</button>
+        <h3 id="txt-eval-title">Avalie sua Experiência</h3>
+        <p id="txt-eval-desc">O que achou do nosso ecossistema digital?</p>
+        
+        <div class="eval-emojis">
+            <button onclick="votarEmoji('ruim')">😢</button>
+            <button onclick="votarEmoji('regular')">😐</button>
+            <button onclick="votarEmoji('bom')">😊</button>
+            <button onclick="votarEmoji('excelente')">🤩</button>
+        </div>
+
+        <div id="eval-feedback-box" class="eval-feedback-box hidden">
+            <p id="eval-response-text"></p>
+            <div id="eval-negative-action" class="hidden" style="margin-top: 8px;">
+                <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2"></textarea>
+                <button class="btn-submit" style="font-size:0.75rem; padding:4px 8px; width:100%;" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-banner" class="cookie-premium-banner">
+        <div class="cookie-content">
+            <p id="txt-cookie-msg">Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.</p>
+            <button class="btn-submit" id="btn-cookie-accept" onclick="aceitarCookies()">Aceitar</button>
+        </div>
+    </div>
 
     <footer class="footer-premium">
         <div class="container footer-content-wrap">
