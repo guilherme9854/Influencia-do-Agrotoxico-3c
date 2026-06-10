@@ -20,6 +20,9 @@
                     <span class="bar"></span>
                 </button>
                 <div class="logo">Agro<span>Sustentável</span></div>
+            </div>
+
+            <div class="nav-center-badge">
                 <span class="agrinho-badge">Agrinho 2026</span>
             </div>
 
@@ -29,29 +32,36 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#estatisticas">Dados Gerais</a></li>
                     <li><a href="#infografico">Passo a Passo</a></li>
-                    <li><a href="#alternativas">Práticas Práticas</a></li>
+                    <li><a href="#alternativas">Práticas</a></li>
                     <li><a href="#desafio">Quiz Educativo</a></li>
-                    <li><a href="#sobre">Sobre o Projeto</a></li>
                     <li><a href="#fontes">Referências</a></li>
                 </ul>
+                
+                <div class="menu-contact">
+                    <div class="menu-header">Contacto</div>
+                    <a href="https://instagram.com" target="_blank" class="contact-link">📸 Instagram</a>
+                    <a href="https://wa.me/seu-numero" target="_blank" class="contact-link">💬 WhatsApp</a>
+                </div>
             </div>
 
-            <div class="nav-center">
+            <div class="nav-right">
+                <button class="theme-btn" id="theme-toggle" aria-label="Mudar Tema">🌙</button>
+                
                 <div class="lang-dropdown">
                     <button class="lang-btn" id="lang-dropdown-btn">🌐 PT</button>
                     <div class="lang-dropdown-content">
                         <button data-lang-select="pt">Português</button>
                         <button data-lang-select="en">English</button>
                         <button data-lang-select="es">Español</button>
+                        <button data-lang-select="fr">Français</button>
+                        <button data-lang-select="de">Deutsch</button>
+                        <button data-lang-select="it">Italiano</button>
                     </div>
                 </div>
-            </div>
 
-            <div class="nav-right">
-                <button class="theme-btn" id="theme-toggle">🌙</button>
                 <div class="nav-auth-buttons">
                     <a href="https://accounts.google.com/signup" target="_blank" class="btn-register">Criar conta</a>
-                    <a href="https://accounts.google.com/v3/signin/identifier" target="_blank" class="btn-login">Entrar</a>
+                    <a href="https://accounts.google.com/ServiceLogin" target="_blank" class="btn-login">Entrar</a>
                 </div>
             </div>
         </div>
@@ -108,14 +118,14 @@
         <section id="alternativas" class="content-section reveal">
             <h2>Substituições Inteligentes no Campo</h2>
             
-            <div class="filter-buttons" style="margin-bottom: 15px; display: flex; gap: 8px;">
-                <button class="btn-submit active" onclick="filterAlternativas('all')">Ver Tudo</button>
-                <button class="btn-submit" onclick="filterAlternativas('biologico')">Manejo Biológico</button>
-                <button class="btn-submit" onclick="filterAlternativas('quimico')">Riscos Químicos</button>
+            <div class="filter-buttons">
+                <button class="btn-filter active" onclick="filterAlternativas('all')">Ver Tudo</button>
+                <button class="btn-filter" onclick="filterAlternativas('biologico')">Manejo Biológico</button>
+                <button class="btn-filter" onclick="filterAlternativas('quimico')">Riscos Químicos</button>
             </div>
 
             <div class="cards-grid grid-2 alternativas-container">
-                <div class="card" data-category="quimico">
+                <div class="card premium-card" data-category="quimico">
                     <span class="card-badge">Impacto Convencional</span>
                     <h3>Defensivos Químicos Pesados</h3>
                     <div class="chart-container">
@@ -126,7 +136,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card" data-category="biologico">
+                <div class="card premium-card" data-category="biologico">
                     <span class="card-badge">Alternativa Ecológica</span>
                     <h3>Macrobiológicos (Joaninhas)</h3>
                     <div class="chart-container">
@@ -143,36 +153,14 @@
         <section id="desafio" class="content-section reveal">
             <div class="card">
                 <h2>Desafio do Conhecimento</h2>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:</p>
+                
                 <div id="quiz-container">
                     <h3 id="quiz-question" style="font-size: 1rem; margin-bottom: 12px;">--</h3>
                     <div id="quiz-options" class="quiz-options"></div>
                     <div id="quiz-feedback" class="quiz-feedback hidden"></div>
                     <button id="btn-next-quiz" class="btn-submit hidden" style="margin-top: 15px; width: auto;">Avançar</button>
                 </div>
-            </div>
-        </section>
-
-        <section id="sobre" class="content-section reveal">
-            <h2>Sobre o Projeto</h2>
-            <div class="project-table-container">
-                <table class="project-table">
-                    <thead>
-                        <tr>
-                            <th>DESENVOLVEDOR PRINCIPAL</th>
-                            <th>INSTITUIÇÃO DE ENSINO</th>
-                            <th>ORIENTAÇÃO TÉCNICO-PEDAGÓGICA</th>
-                            <th>INICIATIVA VINCULADA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Luiz Felipe Pedracoli</strong></td>
-                            <td>Colégio Estadual de Rolândia</td>
-                            <td>Coordenação de Agroecologia</td>
-                            <td><strong>Programa Agrinho — 2026</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </section>
 
@@ -196,60 +184,23 @@
             </div>
         </section>
 
+        <section id="sobre" class="sobre-escondido reveal">
+            <p><strong>Desenvolvedor Principal:</strong> Luiz Felipe Pedracoli | <strong>Instituição:</strong> Sua Escola/Colégio | <strong>Orientação:</strong> Nome do Professor(a) | <strong>Iniciativa:</strong> Programa Agrinho 2026</p>
+        </section>
+
     </main>
 
     <footer class="footer-premium">
         <div class="container footer-content-wrap">
-            <div class="footer-top-layout">
-                <div class="footer-brand">
-                    <div class="logo" style="font-size: 1rem;">Agro<span>Sustentável</span></div>
-                </div>
-                <div class="footer-academic-meta">
-                    <div><span class="academic-tag">Foco ODS:</span> ODS 12 & ODS 15 - ONU</div>
-                </div>
-            </div>
-            <hr class="footer-divider">
             <div class="footer-bottom-flex">
-                <p>&copy; 2026 AgroSustentável. Luiz Felipe Pedracoli.</p>
+                <div class="logo" style="font-size: 1rem;">Agro<span>Sustentável</span></div>
+                <p>&copy; 2026 AgroSustentável. Todos os direitos reservados aos autores.</p>
+                <div class="footer-academic-meta">
+                    <span>ODS 12 & 15 - ONU</span>
+                </div>
             </div>
         </div>
     </footer>
-
-    <div id="cookie-banner" class="cookie-banner">
-        <div class="cookie-content">
-            <p>Utilizamos cookies para otimizar sua experiência de navegação acadêmica.</p>
-            <div class="cookie-actions">
-                <button id="cookie-decline-btn" class="btn-cookie btn-cookie-decline">Recusar</button>
-                <button id="cookie-accept-btn" class="btn-cookie btn-cookie-accept">Aceitar</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="emoji-feedback-widget" class="feedback-widget cookie-above">
-        <button id="feedback-trigger-btn" class="feedback-trigger">⭐ <span>Avaliar Experiência</span></button>
-        <div id="feedback-card" class="feedback-card hidden">
-            <div id="feedback-screen-voting">
-                <div class="feedback-header">
-                    <h4>O que achou do site?</h4>
-                    <button class="feedback-close close-widget-action">×</button>
-                </div>
-                <div class="feedback-emojis">
-                    <button class="emoji-btn" data-rating="1">😢</button>
-                    <button class="emoji-btn" data-rating="2">🙁</button>
-                    <button class="emoji-btn" data-rating="3">😐</button>
-                    <button class="emoji-btn" data-rating="4">🙂</button>
-                    <button class="emoji-btn" data-rating="5">🤩</button>
-                </div>
-            </div>
-            <div id="feedback-screen-thanks" class="hidden">
-                <div class="feedback-header">
-                    <span style="color:var(--accent); font-weight:600;">Sucesso!</span>
-                    <button class="feedback-close close-widget-action">×</button>
-                </div>
-                <p class="feedback-thanks">Obrigado pelo seu voto! 🌱</p>
-            </div>
-        </div>
-    </div>
 
     <script src="main.js"></script>
 </body>

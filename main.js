@@ -1,25 +1,56 @@
 let currentLang = 'pt';
-const quizData = [{
-    question: {
-        pt: "Qual é o principal objetivo do Controle Biológico na agricultura sustentável?",
-        en: "What is the main objective of Biological Control in sustainable agriculture?"
-    },
-    options: {
-        pt: [
-            "Eliminar toda a biodiversidade local para proteger as plantas.",
-            "Utilizar inimigos naturais (como insetos benéficos) para controlar pragas.",
-            "Aumentar o uso de herbicidas sintéticos na lavoura.",
-            "Substituir a irrigação por produtos químicos concentrados."
-        ],
-        en: [
-            "Eliminate all local biodiversity to protect plants.",
-            "Use natural enemies (like beneficial insects) to control pests.",
-            "Increase the use of synthetic herbicides in the crop.",
-            "Replace irrigation with concentrated chemical products."
-        ]
-    },
-    correct: 1
-}];
+
+const quizData = [
+    {
+        question: {
+            pt: "Qual é o principal objetivo do Controle Biológico na agricultura sustentável?",
+            en: "What is the main objective of Biological Control in sustainable agriculture?",
+            es: "¿Cuál es el objetivo principal del Control Biológico en la agricultura sostenible?",
+            fr: "Quel est l'objectif principal du contrôle biologique?",
+            de: "Was ist das Hauptziel der biologischen Schädlingsbekämpfung?",
+            it: "Qual è l'obiettivo principale del controllo biologico?"
+        },
+        options: {
+            pt: [
+                "Eliminar toda a biodiversidade local para proteger as plantas.",
+                "Utilizar inimigos naturais (como insetos benéficos) para controlar pragas.",
+                "Aumentar o uso de herbicidas sintéticos na lavoura.",
+                "Substituir a irrigação por produtos químicos concentrados."
+            ],
+            en: [
+                "Eliminate all local biodiversity to protect plants.",
+                "Use natural enemies (like beneficial insects) to control pests.",
+                "Increase the use of synthetic herbicides in the crop.",
+                "Replace irrigation with concentrated chemical products."
+            ],
+            es: [
+                "Eliminar toda la biodiversidad local para proteger las plantas.",
+                "Utilizar enemigos naturales para controlar plagas.",
+                "Aumentar el uso de herbicidas sintéticos.",
+                "Reemplazar el riego por productos químicos."
+            ],
+            fr: [
+                "Éliminer toute la biodiversité locale.",
+                "Utiliser des ennemis naturels pour lutter contre les bioagresseurs.",
+                "Augmenter l'utilisation d'herbicides.",
+                "Remplacer l'irrigation par des produits chimiques."
+            ],
+            de: [
+                "Die gesamte lokale Artenvielfalt vernichten.",
+                "Natürliche Feinde zur Schädlingsbekämpfung einsetzen.",
+                "Den Einsatz synthetischer Herbizide erhöhen.",
+                "Die Bewässerung durch Chemikalien ersetzen."
+            ],
+            it: [
+                "Eliminare tutta la biodiversità locale.",
+                "Utilizzare nemici naturali per controllare i parassiti.",
+                "Aumentare l'uso di erbicidi sintetici.",
+                "Sostituire l'irrigazione con prodotti chimici."
+            ]
+        },
+        correct: 1
+    }
+];
 
 let currentQuestionIndex = 0;
 
@@ -28,8 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initMenuLateral();
     initLanguageSystem();
     initQuizSystem();
-    initFeedbackWidget();
-    initCookies();
     initScrollReveal();
 });
 
@@ -37,16 +66,22 @@ function initLanguageSystem() {
     const btn = document.getElementById('lang-dropdown-btn');
     const dropdown = document.querySelector('.lang-dropdown');
     const options = document.querySelectorAll('[data-lang-select]');
+
     if (!btn || !dropdown) return;
 
-    btn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('active'); });
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle('active');
+    });
+
     document.addEventListener('click', () => dropdown.classList.remove('active'));
 
     options.forEach(opt => {
         opt.addEventListener('click', () => {
             const selectedLang = opt.getAttribute('data-lang-select');
             currentLang = selectedLang;
-            btn.textContent = `🌐 ${selectedLang.toUpperCase()}`;
+            const labelMap = { pt: 'PT', en: 'EN', es: 'ES', fr: 'FR', de: 'DE', it: 'IT' };
+            btn.textContent = `🌐 ${labelMap[selectedLang]}`;
             renderQuizQuestion();
         });
     });
@@ -54,13 +89,16 @@ function initLanguageSystem() {
 
 function initQuizSystem() {
     const nextBtn = document.getElementById('btn-next-quiz');
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < quizData.length) renderQuizQuestion();
-            else showQuizFinished();
-        });
-    }
+    if (!nextBtn) return;
+
+    nextBtn.addEventListener('click', () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizData.length) {
+            renderQuizQuestion();
+        } else {
+            showQuizFinished();
+        }
+    });
     renderQuizQuestion();
 }
 
@@ -69,23 +107,29 @@ function renderQuizQuestion() {
     const optionsContainer = document.getElementById('quiz-options');
     const feedbackEl = document.getElementById('quiz-feedback');
     const nextBtn = document.getElementById('btn-next-quiz');
+
     if (!questionEl || !optionsContainer) return;
 
     feedbackEl.classList.add('hidden');
     nextBtn.classList.add('hidden');
     optionsContainer.innerHTML = '';
 
-    const currentQuiz = quizData[currentQuestionIndex];
-    questionEl.textContent = currentQuiz.question[currentLang] || currentQuiz.question['pt'];
+    if (currentQuestionIndex >= quizData.length) {
+        showQuizFinished();
+        return;
+    }
 
-    const optionsList = currentQuiz.options[currentLang] || currentQuiz.options['pt'];
-    optionsList.forEach((optionText, index) => {
+    const currentQuiz = quizData[currentQuestionIndex];
+    questionEl.textContent = currentQuiz.question[currentLang];
+
+    currentQuiz.options[currentLang].forEach((optionText, index) => {
         const button = document.createElement('button');
         button.className = 'option-btn';
         button.textContent = optionText;
         button.addEventListener('click', () => {
             const buttons = optionsContainer.querySelectorAll('.option-btn');
             buttons.forEach(b => b.disabled = true);
+
             if (index === currentQuiz.correct) {
                 button.classList.add('correct');
                 feedbackEl.className = "quiz-feedback success";
@@ -104,37 +148,10 @@ function renderQuizQuestion() {
 }
 
 function showQuizFinished() {
-    document.getElementById('quiz-question').textContent = "Desafio Concluído!";
-    document.getElementById('quiz-options').innerHTML = '';
-}
-
-function initFeedbackWidget() {
-    const trigger = document.getElementById('feedback-trigger-btn');
-    const card = document.getElementById('feedback-card');
-    const closeButtons = document.querySelectorAll('.close-widget-action');
-    const screenVoting = document.getElementById('feedback-screen-voting');
-    const screenThanks = document.getElementById('feedback-screen-thanks');
-    const emojis = document.querySelectorAll('.emoji-btn');
-
-    if (!trigger || !card) return;
-
-    trigger.addEventListener('click', (e) => { e.stopPropagation(); card.classList.toggle('hidden'); });
-    closeButtons.forEach(btn => btn.addEventListener('click', (e) => { e.stopPropagation(); card.classList.add('hidden'); }));
-
-    emojis.forEach(emoji => {
-        emoji.addEventListener('click', (e) => {
-            e.stopPropagation();
-            screenVoting.classList.add('hidden');
-            screenThanks.classList.remove('hidden');
-            setTimeout(() => {
-                card.classList.add('hidden');
-                setTimeout(() => {
-                    screenVoting.classList.remove('hidden');
-                    screenThanks.classList.add('hidden');
-                }, 300);
-            }, 2500);
-        });
-    });
+    const questionEl = document.getElementById('quiz-question');
+    const optionsContainer = document.getElementById('quiz-options');
+    if (questionEl) questionEl.textContent = "Desafio Concluído!";
+    if (optionsContainer) optionsContainer.innerHTML = '';
 }
 
 function initTheme() {
@@ -154,19 +171,21 @@ function initTheme() {
 function initMenuLateral() {
     const burger = document.querySelector('.hamburger');
     const menu = document.querySelector('.nav-menu');
-    if (burger && menu) {
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            menu.classList.toggle('active');
-        });
-    }
+    if (!burger || !menu) return;
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
 }
 
 function filterAlternativas(category) {
     const cards = document.querySelectorAll('.alternativas-container .card');
     cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) card.classList.remove('hidden');
-        else card.classList.add('hidden');
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
     });
 }
 
@@ -178,15 +197,15 @@ function switchStep(step) {
     });
 }
 
-function initCookies() {
-    const banner = document.getElementById('cookie-banner');
-    if (!banner) return;
-    banner.classList.add('show');
-    document.getElementById('cookie-accept-btn').addEventListener('click', () => banner.classList.remove('show'));
-    document.getElementById('cookie-decline-btn').addEventListener('click', () => banner.classList.remove('show'));
-}
-
 function initScrollReveal() {
     const els = document.querySelectorAll('.reveal');
-    els.forEach(el => el.classList.add('visible'));
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                obs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.05 });
+    els.forEach(el => obs.observe(el));
 }
