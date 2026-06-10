@@ -18,14 +18,14 @@ const translations = {
         cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradação do Solo",
         cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Joaninhas)", cardBLbl: "Preservação de Água",
         quizTitle: "Desafio do Conhecimento", quizSubtitle: "Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:",
-        evalTitle: "Avalie sua experiência", evalBad: "Lamentamos. Como podemos melhorar?", evalThanks: "Obrigado pela sua avaliação! 💚",
+        evalTitle: "Avalie nosso site", evalBad: "Lamentamos. Como podemos melhorar?", evalThanks: "Obrigado pela sua avaliação! 💚",
         refTitle: "Referências e Fontes Oficiais", refC1: "Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).",
         refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.",
-        cookieMsg: "Utilizamos cookies para melhorar sua experiência acadêmica e garantir a navegação segura do ecossistema.", 
+        cookieMsg: "Nós valorizamos sua privacidade! Utilizamos cookies e tecnologias semelhantes para coletar dados de navegação, melhorar o desempenho do ecossistema e personalizar seu conteúdo acadêmico de acordo com a nossa Política de Cookies.", 
         copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados.",
         aboutTitle: "Sobre este Ecossistema Digital",
         aboutDesc: "Esta plataforma foi desenvolvida como uma ferramenta educacional e científica focada na disseminação de dados sobre agricultura regenerativa e manejo biológico de pragas. O objetivo central é conscientizar a comunidade escolar e produtores rurais a respeito da viabilidade econômica da substituição de defensivos químicos por organismos macrobiológicos, promovendo a conservação dos polinizadores nativos, o equilíbrio dos solos agrícolas e a segurança alimentar a longo prazo em total conformidade com as diretrizes do Programa Agrinho.",
-        btnSend: "Enviar", btnAccept: "Aceitar", correctTxt: "Correto!", wrongTxt: "Incorreto."
+        btnSend: "Enviar", btnAccept: "Aceitar Tudo", btnReject: "Recusar", btnSettings: "Preferências", correctTxt: "Correto!", wrongTxt: "Incorreto."
     },
     en: {
         logo: "Agro<span>Sustainable</span>", navHeader: "Navigation", lnkInicio: "Home", lnkDados: "General Data",
@@ -42,21 +42,21 @@ const translations = {
         cardQBadge: "Conventional Impact", cardQTitle: "Heavy Chemical Pesticides", cardQLbl: "Soil Degradation",
         cardBBadge: "Ecological Alternative", cardBTitle: "Macrobiologicals (Ladybugs)", cardBLbl: "Water Preservation",
         quizTitle: "Knowledge Challenge", quizSubtitle: "Test your knowledge about the impact of agroecological practices in the field:",
-        evalTitle: "Rate your experience", evalBad: "We are sorry. How can we improve?", evalThanks: "Thank you for your rating! 💚",
+        evalTitle: "Rate our site", evalBad: "We are sorry. How can we improve?", evalThanks: "Thank you for your rating! 💚",
         refTitle: "References and Official Sources", refC1: "National Guidelines for Integrated Pest Management (IPM).",
         refC2: "Global reports on the safe use of biological inputs in farming.",
-        cookieMsg: "We use cookies to improve your academic experience and ensure secure navigation of the ecosystem.", 
+        cookieMsg: "We value your privacy! We use cookies and similar technologies to collect browsing data, improve ecosystem performance, and personalize your academic content according to our Cookies Policy.", 
         copy: "&copy; 2026 AgroSustentável. All rights reserved.",
         aboutTitle: "About this Digital Ecosystem",
         aboutDesc: "This platform was developed as an educational and scientific tool focused on the dissemination of data on regenerative agriculture and biological pest management. The central objective is to raise awareness among the school community and rural producers regarding the economic viability of replacing chemical pesticides with macrobiological organisms, promoting the conservation of native pollinators, the balance of agricultural soils, and long-term food security in full compliance with the guidelines of the Agrinho Program.",
-        btnSend: "Send", btnAccept: "Accept", correctTxt: "Correct!", wrongTxt: "Incorrect."
+        btnSend: "Send", btnAccept: "Accept All", btnReject: "Reject", btnSettings: "Preferences", correctTxt: "Correct!", wrongTxt: "Incorrect."
     },
     es: {
         logo: "Agro<span>Sustentable</span>", navHeader: "Navegación", lnkInicio: "Inicio", lnkDados: "Datos Generales",
         lnkPasso: "Paso a Paso", lnkPraticas: "Prácticas de Campo", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referencias",
         contatoHeader: "Contacto", langHeader: "Elegir Idioma", btnCriar: "Crear cuenta", btnEntrar: "Ingresar",
         heroTag: "Sustentabilidad Racional", heroTitle: "El Futuro del Campo con Manejo Biológico",
-        heroDesc: "Un análisis científico sobre cómo la sustitución de defensivos químicos por defensores naturales protege la biodiversidad, reduce costos y garantiza alimentos más saludables.",
+        heroDesc: "Un análisis científico sobre cómo la sustitución de defensivos químicos por defensores naturales protege la biodiversidade.",
         stat1: "Reducción promedio en costos de manejo", stat2: "Más preservación de polinizadores", stat3: "Residuos tóxicos en producto final",
         stepTitle: "¿Cómo Funciona la Transición Sustentable?", stepInst: "Haga clic en las tarjetas de abajo para ver cada paso del proceso:",
         stepC1T: "Monitoreo", stepC1D: "Identificación precisa de brotes de plagas antes de actuar.",
@@ -66,14 +66,14 @@ const translations = {
         cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradación del Suelo",
         cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Mariquitas)", cardBLbl: "Preservación del Agua",
         quizTitle: "Desafío del Conocimiento", quizSubtitle: "Pruebe sus conocimientos sobre el impacto de las prácticas agroecológicas:",
-        evalTitle: "Evalúe su experiencia", evalBad: "Lo sentimos. ¿Cómo podemos mejorar?", evalThanks: "¡Gracias por su evaluación! 💚",
+        evalTitle: "Evalúe nuestro sitio", evalBad: "Lo sentimos. ¿Cómo podemos mejorar?", evalThanks: "¡Gracias por su evaluación! 💚",
         refTitle: "Referencias y Fuentes Oficiales", refC1: "Directrices Nacionales para el Manejo Integrado de Plagas (MIP).",
         refC2: "Informes globales sobre el uso seguro de insumos biológicos en la agricultura.",
-        cookieMsg: "Utilizamos cookies para mejorar su experiencia académica y garantizar la navegación segura del ecosistema.", 
+        cookieMsg: "¡Valoramos su privacidad! Utilizamos cookies y tecnologías similares para recopilar datos de navegación y mejorar el rendimiento de acuerdo con nuestra Política de Cookies.", 
         copy: "&copy; 2026 AgroSustentable. Todos los derechos reservados.",
         aboutTitle: "Sobre este Ecosistema Digital",
-        aboutDesc: "Esta plataforma fue desarrollada como una herramienta educativa y científica enfocada en la difusión de datos sobre agricultura regenerativa y manejo biológico de plagas. El objetivo central es concientizar a la comunidad escolar y productores rurales sobre la viabilidad económica de la sustitución de agroquímicos.",
-        btnSend: "Enviar", btnAccept: "Aceptar", correctTxt: "¡Correcto!", wrongTxt: "Incorrecto."
+        aboutDesc: "Esta plataforma fue desarrollada como una herramienta educativa y científica enfocada en la difusión de datos sobre agricultura regenerativa y manejo biológico de plagas.",
+        btnSend: "Enviar", btnAccept: "Aceptar Todo", btnReject: "Rechazar", btnSettings: "Preferencias", correctTxt: "¡Correcto!", wrongTxt: "Incorrecto."
     },
     fr: {
         logo: "Agro<span>Durable</span>", navHeader: "Navigation", lnkInicio: "Accueil", lnkDados: "Données Générales",
@@ -90,14 +90,14 @@ const translations = {
         cardQBadge: "Impact Conventionnel", cardQTitle: "Pesticides Chimiques Lourds", cardQLbl: "Dégradation des Sols",
         cardBBadge: "Alternative Écologique", cardBTitle: "Macrobiologiques (Coccinelles)", cardBLbl: "Préservation de l'Eau",
         quizTitle: "Défi des Connaissances", quizSubtitle: "Testez vos connaissances sur l'impact des pratiques agroécologiques:",
-        evalTitle: "Évaluez votre expérience", evalBad: "Nous sommes désolés. Comment pouvons-nous nous améliorer?", evalThanks: "Merci pour votre évaluation! 💚",
-        refTitle: "Références et Sources Officielles", refC1: "Directives Nationales pour la Lutte Intégrée contre les Ravageurs (MIP).",
+        evalTitle: "Évaluez notre site", evalBad: "Nous sommes désolés. Comment pouvons-nous nous améliorer?", evalThanks: "Merci pour votre évaluation! 💚",
+        refTitle: "Références et Sources Oficielles", refC1: "Directives Nationales pour la Lutte Intégrée contre les Ravageurs (MIP).",
         refC2: "Rapports mondiaux sur l'utilisation sécurisée des intrants biologiques en agriculture.",
-        cookieMsg: "Nous utilisons des cookies pour améliorer votre expérience académique et garantir une navigation sécurisée.", 
+        cookieMsg: "Nous apprécions votre vie privée! Nous utilisons des cookies et des technologies similaires pour collecter des données de navigation conformément à notre Politique relative aux cookies.", 
         copy: "&copy; 2026 AgroDurable. Tous droits réservés.",
         aboutTitle: "À Propos de cet Écosystème Numérique",
         aboutDesc: "Cette plateforme a été développée comme un outil pédagogique et scientifique axé sur la diffusion de données sur l'agriculture régénérative.",
-        btnSend: "Envoyer", btnAccept: "Accepter", correctTxt: "Correct!", wrongTxt: "Incorrect."
+        btnSend: "Envoyer", btnAccept: "Tout Accepter", btnReject: "Refuser", btnSettings: "Options", correctTxt: "Correct!", wrongTxt: "Incorrect."
     }
 };
 
@@ -120,7 +120,7 @@ const quizData = [
         question: { 
             pt: "Qual inseto é famoso por atuar como predador natural de pulgões?", 
             en: "Which insect is famous for acting as a natural predator of aphids?",
-            es: "¿Qué insecto es famoso por actuar como depredador natural de pulgones?",
+            es: "¿Qué insecto é famoso por actuar como depredador natural de pulgones?",
             fr: "Quel insecte est célèbre pour être un prédateur naturel des pucerons?"
         },
         options: {
@@ -139,14 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
     initQuizSystem();
     initScrollReveal();
     verificarCookies();
-    applyTranslations(); // Aplica a tradução inicial padrão (pt)
+    applyTranslations();
 });
 
 function applyTranslations() {
     const lang = currentLang;
     const t = translations[lang] || translations['pt'];
 
-    // Traduções Básicas Estruturais com Verificação de Segurança de Elemento
+    // Verificação de Segurança para cada ID antes de aplicar tradução
     if(document.getElementById('txt-logo')) document.getElementById('txt-logo').innerHTML = t.logo;
     if(document.getElementById('txt-footer-logo')) document.getElementById('txt-footer-logo').innerHTML = t.logo;
     if(document.getElementById('txt-nav-header')) document.getElementById('txt-nav-header').textContent = t.navHeader;
@@ -193,13 +193,16 @@ function applyTranslations() {
     if(document.getElementById('txt-about-title')) document.getElementById('txt-about-title').textContent = t.aboutTitle;
     if(document.getElementById('txt-about-desc')) document.getElementById('txt-about-desc').textContent = t.aboutDesc;
 
-    // Elementos Mutáveis do Widget de Cookies e Avaliação (Evita travar o script)
+    // Elementos Variáveis de Cookies e Avaliação Otimizada
     if(document.getElementById('ui-eval-title')) document.getElementById('ui-eval-title').textContent = t.evalTitle;
     if(document.getElementById('ui-eval-bad')) document.getElementById('ui-eval-bad').textContent = t.evalBad;
     if(document.getElementById('ui-eval-thanks')) document.getElementById('ui-eval-thanks').textContent = t.evalThanks;
     if(document.getElementById('btn-send-eval')) document.getElementById('btn-send-eval').textContent = t.btnSend;
+    
     if(document.getElementById('ui-cookie-txt')) document.getElementById('ui-cookie-txt').textContent = t.cookieMsg;
     if(document.getElementById('btn-accept-cookies')) document.getElementById('btn-accept-cookies').textContent = t.btnAccept;
+    if(document.getElementById('btn-reject-cookies')) document.getElementById('btn-reject-cookies').textContent = t.btnReject;
+    if(document.getElementById('btn-settings-cookies')) document.getElementById('btn-settings-cookies').textContent = t.btnSettings;
 
     renderQuizQuestion();
 }
@@ -329,20 +332,20 @@ function reiniciarQuiz() {
 
 function handleRating(type) {
     const s1 = document.getElementById('eval-screen-1');
-    if (type === 'bad') {
+    if (type === 'bad' || type === 'neutral') {
         s1.classList.add('hidden');
         document.getElementById('eval-screen-bad').classList.remove('hidden');
     } else {
         s1.classList.add('hidden');
         document.getElementById('eval-screen-thanks').classList.remove('hidden');
-        setTimeout(toggleEval, 3000);
+        setTimeout(toggleEval, 2500);
     }
 }
 
 function submitBadRating() {
     document.getElementById('eval-screen-bad').classList.add('hidden');
     document.getElementById('eval-screen-thanks').classList.remove('hidden');
-    setTimeout(toggleEval, 3000);
+    setTimeout(toggleEval, 2500);
 }
 
 function toggleEval() {
