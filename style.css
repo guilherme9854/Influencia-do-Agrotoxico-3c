@@ -159,22 +159,26 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
 .safe-bar { background-color: var(--accent); }
 .chart-value { font-size: 0.75rem; color: var(--text-muted); }
 
-/* QUIZ SEÇÃO */
-.quiz-options { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
-.option-btn { width: 100%; text-align: left; padding: 12px; border-radius: 6px; border: var(--border); background: var(--bg-main); color: var(--text-main); font-size: 0.88rem; cursor: pointer; transition: background 0.2s; }
-.option-btn:hover { background: var(--dropdown-hover); }
-.option-btn.correct { background-color: rgba(34, 197, 94, 0.15) !important; border-color: #22c55e !important; color: #166534 !important; }
-.option-btn.wrong { background-color: rgba(239, 68, 68, 0.1) !important; border-color: #ef4444 !important; color: #991b1b !important; }
-.quiz-feedback { margin-top: 12px; padding: 12px; border-radius: 6px; font-size: 0.85rem; }
-.quiz-feedback.success { background-color: rgba(34, 197, 94, 0.1); color: #166534; }
-.quiz-feedback.error { background-color: rgba(239, 68, 68, 0.05); color: #991b1b; }
-.btn-submit { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
-
-/* JANELA DE AVALIAÇÃO FLUTUANTE NO CANTO DO ECRÃ */
+/* SISTEMA DE AVALIAÇÃO COM ESTADO REESTRUTURADO */
 .eval-floating-window {
-    position: fixed; bottom: 20px; right: 20px; width: 300px;
+    position: fixed; bottom: 20px; right: 20px;
     background-color: var(--card-bg); border: var(--border); border-radius: var(--radius);
-    padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 999;
+    transition: all 0.2s ease-in-out;
+}
+.eval-floating-window.style-closed {
+    padding: 0; width: auto; height: auto; background: transparent; border: none; box-shadow: none;
+}
+.eval-trigger-btn {
+    background-color: var(--primary); color: white; border: none;
+    padding: 10px 18px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;
+    cursor: pointer; box-shadow: 0 4px 12px rgba(22, 101, 52, 0.3); transition: transform 0.1s;
+}
+.eval-trigger-btn:hover { transform: scale(1.03); }
+
+/* Conteúdo Expandido */
+.eval-floating-window.style-expanded {
+    width: 300px; padding: 18px; background-color: var(--card-bg); border: var(--border);
 }
 .eval-emojis { display: flex; gap: 14px; font-size: 1.6rem; margin: 12px 0; }
 .eval-emojis button { background: transparent; border: none; cursor: pointer; transition: transform 0.1s; }
@@ -216,6 +220,6 @@ h1, h2, h3, h4 { font-weight: 600; letter-spacing: -0.02em; }
 @media(max-width: 768px) {
     .grid-2, .infographic-steps { grid-template-columns: 1fr; }
     .nav-center-badge { display: none; }
-    .eval-floating-window { width: calc(100% - 40px); left: 20px; bottom: 15px; }
+    .eval-floating-window.style-expanded { width: calc(100% - 40px); left: 20px; bottom: 15px; }
     .cookie-content { flex-direction: column; text-align: center; }
 }

@@ -34,7 +34,6 @@
                     <li><a href="#estatisticas" id="lnk-dados">Dados Gerais</a></li>
                     <li><a href="#infografico" id="lnk-passo">Passo a Passo</a></li>
                     <li><a href="#alternativas" id="lnk-praticas">Práticas Práticas</a></li>
-                    <li><a href="#desafio" id="lnk-quiz">Quiz Educativo</a></li>
                     <li><a href="#fontes" id="lnk-referencias">Referências</a></li>
                 </ul>
                 
@@ -155,20 +154,6 @@
             </div>
         </section>
 
-        <section id="desafio" class="content-section reveal">
-            <div class="card">
-                <h2 id="txt-quiz-title">Desafio do Conhecimento</h2>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;" id="txt-quiz-subtitle">Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:</p>
-                
-                <div id="quiz-container">
-                    <h3 id="quiz-question" style="font-size: 1rem; margin-bottom: 12px;">--</h3>
-                    <div id="quiz-options" class="quiz-options"></div>
-                    <div id="quiz-feedback" class="quiz-feedback hidden"></div>
-                    <button id="btn-next-quiz" class="btn-submit hidden" style="margin-top: 15px; width: auto;">Avançar</button>
-                </div>
-            </div>
-        </section>
-
         <section id="fontes" class="content-section reveal">
             <h2 id="txt-ref-title">Referências e Fontes Oficiais</h2>
             <div class="references-grid">
@@ -200,23 +185,29 @@
 
     </main>
 
-    <div id="avaliacao-container" class="eval-floating-window shadow-card">
-        <button class="close-eval-btn" onclick="fecharAvaliacao()" aria-label="Fechar">✕</button>
-        <h3 id="txt-eval-title">Avalie sua Experiência</h3>
-        <p id="txt-eval-desc">O que achou do nosso ecossistema digital?</p>
-        
-        <div class="eval-emojis">
-            <button onclick="votarEmoji('ruim')">😢</button>
-            <button onclick="votarEmoji('regular')">😐</button>
-            <button onclick="votarEmoji('bom')">😊</button>
-            <button onclick="votarEmoji('excelente')">🤩</button>
-        </div>
+    <div id="avaliacao-container" class="eval-floating-window shadow-card style-closed">
+        <button id="eval-trigger-btn" class="eval-trigger-btn" onclick="expandirAvaliacao()">
+            <span id="txt-eval-trigger-msg">Nos Avalie ⭐</span>
+        </button>
 
-        <div id="eval-feedback-box" class="eval-feedback-box hidden">
-            <p id="eval-response-text"></p>
-            <div id="eval-negative-action" class="hidden" style="margin-top: 8px;">
-                <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2"></textarea>
-                <button class="btn-submit" style="font-size:0.75rem; padding:4px 8px; width:100%;" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
+        <div id="eval-expanded-content" class="hidden">
+            <button class="close-eval-btn" onclick="fecharAvaliacao(event)" aria-label="Fechar">✕</button>
+            <h3 id="txt-eval-title">Avalie sua Experiência</h3>
+            <p id="txt-eval-desc">O que achou do nosso ecossistema digital?</p>
+            
+            <div class="eval-emojis">
+                <button onclick="votarEmoji('ruim')">😢</button>
+                <button onclick="votarEmoji('regular')">😐</button>
+                <button onclick="votarEmoji('bom')">😊</button>
+                <button onclick="votarEmoji('excelente')">🤩</button>
+            </div>
+
+            <div id="eval-feedback-box" class="eval-feedback-box hidden">
+                <p id="eval-response-text"></p>
+                <div id="eval-negative-action" class="hidden" style="margin-top: 8px;">
+                    <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2"></textarea>
+                    <button class="btn-submit" style="font-size:0.75rem; padding:4px 8px; width:100%;" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
+                </div>
             </div>
         </div>
     </div>
