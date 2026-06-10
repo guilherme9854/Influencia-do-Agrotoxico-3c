@@ -2,7 +2,7 @@ let currentLang = 'pt';
 let quizScore = 0;
 let currentQuestionIndex = 0;
 
-// SISTEMA DE TRADUÇÃO COMPLETA DO SITE MUDADO DETALHADAMENTE
+// TRADUÇÕES COMPLETAS E DETALHADAS INCLUINDO AS NOVAS SEÇÕES
 const translations = {
     pt: {
         logo: "Agro<span>Sustentável</span>", navHeader: "Navegação", lnkInicio: "Início", lnkDados: "Dados Gerais",
@@ -21,7 +21,9 @@ const translations = {
         quizTitle: "Desafio do Conhecimento", quizSubtitle: "Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:",
         evalTitle: "Avalie sua Experiência", evalDesc: "O que achou do nosso ecossistema digital?", btnEvalSend: "Enviar para Sugestões",
         refTitle: "Referências e Fontes Oficiais", refC1: "Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).",
-        refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados aos autores."
+        refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.",
+        descTitle: "Sobre este Ecossistema", descContent: "Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.",
+        cookieMsg: "Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados aos autores."
     },
     en: {
         logo: "Agro<span>Sustainable</span>", navHeader: "Navigation", lnkInicio: "Home", lnkDados: "General Data",
@@ -40,7 +42,9 @@ const translations = {
         quizTitle: "Knowledge Challenge", quizSubtitle: "Test your knowledge about the impact of agroecological practices in the field:",
         evalTitle: "Rate Your Experience", evalDesc: "What did you think of our digital ecosystem?", btnEvalSend: "Send to Suggestions",
         refTitle: "References and Official Sources", refC1: "National Guidelines for Integrated Pest Management (IPM).",
-        refC2: "Global reports on the safe use of biological inputs in farming.", copy: "&copy; 2026 AgroSustentável. All rights reserved to authors."
+        refC2: "Global reports on the safe use of biological inputs in farming.",
+        descTitle: "About this Ecosystem", descContent: "This digital platform was developed to spread scientific and practical data on biological management and regenerative agriculture. Aligned with global sustainability goals, the project aims to educate farmers and students on the economic and environmental viability of the field's ecological transition.",
+        cookieMsg: "We use cookies to ensure the best experience within our sustainable ecosystem.", copy: "&copy; 2026 AgroSustentável. All rights reserved to authors."
     },
     es: {
         logo: "Agro<span>Sustentable</span>", navHeader: "Navegación", lnkInicio: "Inicio", lnkDados: "Datos Generales",
@@ -59,122 +63,35 @@ const translations = {
         quizTitle: "Desafío del Conocimiento", quizSubtitle: "Prueba tus conocimientos sobre el impacto de las prácticas agroecológicas:",
         evalTitle: "Evalúa tu Experiencia", evalDesc: "¿Qué te pareció nuestro ecosistema digital?", btnEvalSend: "Enviar a Sugerencias",
         refTitle: "Referencias y Fuentes Oficiales", refC1: "Directrices Nacionales para el Manejo Integrado de Plagas (MIP).",
-        refC2: "Informes globales sobre el uso seguro de insumos biológicos en la agricultura.", copy: "&copy; 2026 AgroSustentável. Todos los derechos reservados."
-    },
-    fr: {
-        logo: "Agro<span>Durable</span>", navHeader: "Navigation", lnkInicio: "Accueil", lnkDados: "Données Générales",
-        lnkPasso: "Étape par Étape", lnkPraticas: "Pratiques Réelles", lnkQuiz: "Quiz Éducatif", lnkReferencias: "Références",
-        contatoHeader: "Contact", langHeader: "Choisir la Langue", btnCriar: "Créer un compte", btnEntrar: "Connexion",
-        heroTag: "Durabilité Rationnelle", heroTitle: "L'Avenir du Champ avec la Gestion Biologique",
-        heroDesc: "Une analyse scientifique sur la façon dont le remplacement des pesticides chimiques par des défenseurs naturels protège la biodiversité, réduit les coûts et garantit des aliments sains.",
-        stat1: "Réduction moyenne des coûts de gestion", stat2: "Plus de préservation des pollinisateurs", stat3: "Résidus toxiques dans le produit final",
-        stepTitle: "Comment Fonctionne la Transition Durable?", stepInst: "Cliquez sur les cartes ci-dessous pour voir chaque étape du processus:",
-        stepC1T: "Surveillance", stepC1D: "Identification précise des foyers de ravageurs avant d'agir.",
-        stepC2T: "Introduction", stepC2D: "Lâcher contrôlé d'ennemis naturels spécifiques.",
-        stepC3T: "Équilibre", stepC3D: "La nature elle-même contrôle la population de ravageurs.",
-        pracTitle: "Substitutions Intelligentes sur le Terrain", fltAll: "Voir Tout", fltBio: "Gestion Biologique", fltQui: "Risques Chimiques",
-        cardQBadge: "Impact Conventionnel", cardQTitle: "Pesticides Chimiques Lourds", cardQLbl: "Dégradation des Sols",
-        cardBBadge: "Alternative Écologique", cardBTitle: "Macrobiologiques (Coccinelles)", cardBLbl: "Préservation de l'Eau",
-        quizTitle: "Défi des Connaissances", quizSubtitle: "Testez vos connaissances sur l'impact des pratiques agroécologiques:",
-        evalTitle: "Évaluez votre Expérience", evalDesc: "Qu'avez-vous pensé de notre écosystème numérique?", btnEvalSend: "Envoyer aux Suggestions",
-        refTitle: "Références et Sources Officielles", refC1: "Directives nationales pour la gestion intégrée des ravageurs (GIR).",
-        refC2: "Rapports mondiaux sur l'utilisation sûre des intrants biologiques dans l'agriculture.", copy: "&copy; 2026 AgroSustentável. Tous droits réservés."
-    },
-    de: {
-        logo: "Agro<span>Nachhaltig</span>", navHeader: "Navigation", lnkInicio: "Startseite", lnkDados: "Allgemeine Daten",
-        lnkPasso: "Schritt für Schritt", lnkPraticas: "Praktische Praktiken", lnkQuiz: "Lehrreiches Quiz", lnkReferencias: "Referenzen",
-        contatoHeader: "Kontakt", langHeader: "Sprache Wählen", btnCriar: "Konto erstellen", btnEntrar: "Anmelden",
-        heroTag: "Rationale Nachhaltigkeit", heroTitle: "Die Zukunft des Feldes mit biologischem Management",
-        heroDesc: "Eine wissenschaftliche Analyse, wie der Ersatz chemischer Pestizide durch natürliche Schützer die Artenvielfalt schützt, Kosten senkt und gesündere Lebensmittel garantiert.",
-        stat1: "Durchschnittliche Reduzierung der Managementkosten", stat2: "Mehr Schutz für Bestäuber", stat3: "Toxische Rückstände im Endprodukt",
-        stepTitle: "Wie funktioniert der nachhaltige Übergang?", stepInst: "Klicken Sie auf die Karten unten, um jeden Schritt anzuzeigen:",
-        stepC1T: "Überwachung", stepC1D: "Genaue Identifizierung von Schädlingsherden vor dem Handeln.",
-        stepC2T: "Einführung", stepC2D: "Kontrollierte Freisetzung spezifischer natürlicher Feinde.",
-        stepC3T: "Gleichgewicht", stepC3D: "Die Natur selbst kontrolliert die Schädlingspopulation.",
-        pracTitle: "Intelligenter Ersatz auf dem Feld", fltAll: "Alles Sehen", fltBio: "Biologisches Management", fltQui: "Chemische Risiken",
-        cardQBadge: "Konventionelle Auswirkungen", cardQTitle: "Schwere chemische Pestizide", cardQLbl: "Bodendegradation",
-        cardBBadge: "Ökologische Alternative", cardBTitle: "Makrobiologische (Marienkäfer)", cardBLbl: "Wasserschutz",
-        quizTitle: "Wissensherausforderung", quizSubtitle: "Testen Sie Ihr Wissen über die Auswirkungen agroökologischer Praktiken:",
-        evalTitle: "Bewerten Sie Ihre Erfahrung", evalDesc: "Wie fanden Sie unser digitales Ökosystem?", btnEvalSend: "An Vorschläge Senden",
-        refTitle: "Referenzen und offizielle Quellen", refC1: "Nationale Richtlinien für den integrierten Pflanzenschutz (IPS).",
-        refC2: "Globale Berichte über die sichere Verwendung biologischer Betriebsmittel in der Landwirtschaft.", copy: "&copy; 2026 AgroSustentável. Alle Rechte vorbehalten."
-    },
-    it: {
-        logo: "Agro<span>Sostenibile</span>", navHeader: "Navigazione", lnkInicio: "Inizio", lnkDados: "Dati Generali",
-        lnkPasso: "Passo dopo Passo", lnkPraticas: "Pratiche Reali", lnkQuiz: "Quiz Educativo", lnkReferencias: "Riferimenti",
-        contatoHeader: "Contatti", langHeader: "Scegli la Lingua", btnCriar: "Crea account", btnEntrar: "Accedi",
-        heroTag: "Sostenibilità Razionale", heroTitle: "Il Futuro del Campo con la Gestione Biologica",
-        heroDesc: "Un'analisi scientifica su come la sostituzione dei pesticidi chimici con difensori naturali protegga la biodiversità, riduca i costi e garantisca alimenti sani.",
-        stat1: "Riduzione media dei costi di gestione", stat2: "Maggiore salvaguardia degli impollinatori", stat3: "Residui tossici nel prodotto finale",
-        stepTitle: "Come Funziona la Transizione Sostenibile?", stepInst: "Clicca sulle schede sottostanti per visualizzare ogni fase del processo:",
-        stepC1T: "Monitoraggio", stepC1D: "Identificazione precisa dei focolai di parassiti prima di agire.",
-        stepC2T: "Introduzione", stepC2D: "Rilascio controllato di nemici naturali specifici.",
-        stepC3T: "Equilibrio", stepC3D: "La natura stessa controlla la popolazione di parassiti.",
-        pracTitle: "Sostituzioni Intelligenti sul Campo", fltAll: "Vedi Tutto", fltBio: "Gestione Biologica", fltQui: "Rischi Chimici",
-        cardQBadge: "Impatto Convenzionale", cardQTitle: "Pesticidi Chimici Pesanti", cardQLbl: "Degradazione del Suolo",
-        cardBBadge: "Alternativa Ecologica", cardBTitle: "Macrobiologici (Coccinelle)", cardBLbl: "Tutela dell'Acqua",
-        quizTitle: "Sfida della Conoscenza", quizSubtitle: "Metti alla prova le tue conoscenze sull'impatto delle pratiche agroecologiche:",
-        evalTitle: "Valuta la tua Esperienza", evalDesc: "Cosa ne pensi del nostro ecosistema digitale?", btnEvalSend: "Invia ai Suggerimenti",
-        refTitle: "Riferimenti e Fonti Ufficiali", refC1: "Linee guida nazionali per la gestione integrata dei parassiti (IPM).",
-        refC2: "Rapporti globali sull'uso sicuro degli input biologici in agricoltura.", copy: "&copy; 2026 AgroSustentável. Tutti i diritti riservati."
+        refC2: "Informes globales sobre el uso seguro de insumos biológicos en la agricultura.",
+        descTitle: "Sobre este Ecosistema", descContent: "Esta plataforma digital fue desarrollada con el objetivo de difundir datos científicos y prácticos sobre el manejo biológico y la agricultura regenerativa. El proyecto busca educar a productores y estudiantes sobre la viabilidad económica y ambiental del campo.",
+        cookieMsg: "Utilizamos cookies para garantizar la mejor experiencia en nuestro ecosistema sustentable.", copy: "&copy; 2026 AgroSustentável. Todos los derechos reservados."
     }
 };
 
-// 5 PERGUNTAS DO QUIZ DISPONÍVEIS EM TODOS OS IDIOMAS
 const quizData = [
     {
-        question: { pt: "Qual é o principal objetivo do Controle Biológico?", en: "What is the main objective of Biological Control?", es: "¿Cuál es el objetivo principal del Control Biológico?", fr: "Quel est l'objectif principal du contrôle biologique?", de: "Was ist das Hauptziel der biologischen Schädlingsbekämpfung?", it: "Qual è l'obiettivo principale del controllo biologico?" },
+        question: { pt: "Qual é o principal objetivo do Controle Biológico?", en: "What is the main objective of Biological Control?", es: "¿Cuál es el objetivo principal del Control Biológico?" },
         options: {
             pt: ["Eliminar toda a biodiversidade local.", "Utilizar inimigos naturais para controlar pragas.", "Aumentar defensivos químicos.", "Interromper a irrigação."],
             en: ["Eliminate all local biodiversity.", "Use natural enemies to control pests.", "Increase chemical pesticides.", "Stop irrigation."],
-            es: ["Eliminar toda la biodiversidad.", "Utilizar enemigos naturales para plagas.", "Aumentar defensivos químicos.", "Interrumpir el riego."],
-            fr: ["Éliminer la biodiversité.", "Utiliser des ennemis naturels.", "Augmenter les pesticides.", "Arrêter l'irrigation."],
-            de: ["Die Artenvielfalt vernichten.", "Natürliche Feinde einsetzen.", "Chemische Pestizide erhöhen.", "Die Bewässerung stoppen."],
-            it: ["Eliminare la biodiversità.", "Utilizzare nemici naturali.", "Aumentare i pesticidi chimici.", "Interrompere l'irrigazione."]
+            es: ["Eliminar toda la biodiversidad.", "Utilizar enemigos naturales para plagas.", "Aumentar defensivos químicos.", "Interrumpir el riego."]
         }, correct: 1
     },
     {
-        question: { pt: "Qual inseto é famoso por comer pulgões no campo?", en: "Which insect is famous for eating aphids in the field?", es: "¿Qué insecto é famoso por comer pulgones?", fr: "Quel insecte est célèbre pour manger des pucerons?", de: "Welches Insekt ist bekannt dafür, Blattläuse zu fressen?", it: "Quale insetto è famoso per mangiare gli afidi?" },
+        question: { pt: "Qual inseto é famoso por comer pulgões no campo?", en: "Which insect is famous for eating aphids in the field?", es: "¿Qué insecto es famoso por comer pulgones?" },
         options: {
-            pt: ["Lagarta", "Mosca doméstica", "Joaninha (Macrobiológico)", "Gafanhoto"],
+            pt: ["Lagarta", "Mosca doméstica", "Joaninha", "Gafanhoto"],
             en: ["Caterpillar", "Housefly", "Ladybug", "Grasshopper"],
-            es: ["Oruga", "Mosca", "Mariquita", "Saltamontes"],
-            fr: ["Chenille", "Mouche", "Coccinelle", "Criquet"],
-            de: ["Raupe", "Stubenfliege", "Marienkäfer", "Heuschrecke"],
-            it: ["Bruco", "Mosca", "Coccinella", "Cavalletta"]
+            es: ["Oruga", "Mosca", "Mariquita", "Saltamontes"]
         }, correct: 2
     },
     {
-        question: { pt: "O manejo biológico ajuda a reduzir qual tipo de resíduo?", en: "Biological management helps reduce what type of residue?", es: "¿El manejo biológico ajuda a reducir qué residuo?", fr: "La gestion biologique aide à réduire quel type de résidu?", de: "Welche Rückstände werden durch biologisches Management reduziert?", it: "La gestione biologica aiuta a ridurre quale tipo di residuo?" },
+        question: { pt: "O manejo biológico ajuda a reduzir qual tipo de resíduo?", en: "Biological management helps reduce what type of residue?", es: "¿El manejo biológico ayuda a reducir qué residuo?" },
         options: {
             pt: ["Resíduos orgânicos", "Resíduos tóxicos químicos", "Resíduos plásticos", "Água pura"],
             en: ["Organic waste", "Toxic chemical residues", "Plastic waste", "Pure water"],
-            es: ["Residuos orgánicos", "Residuos químicos tóxicos", "Plásticos", "Agua pura"],
-            fr: ["Déchets organiques", "Résidus chimiques toxiques", "Déchets plastiques", "Eau pure"],
-            de: ["Organischer Abfall", "Toxische chemische Rückstände", "Plastikmüll", "Reines Wasser"],
-            it: ["Rifiuti organici", "Residui chimici tossici", "Rifiuti plastici", "Acqua pura"]
-        }, correct: 1
-    },
-    {
-        question: { pt: "O que significa a sigla MIP?", en: "What does IPM stand for?", es: "¿Qué significa la sigla MIP?", fr: "Que signifie le sigle GIR?", de: "Was bedeutet die Abkürzung IPS?", it: "Cosa significa la sigla IPM?" },
-        options: {
-            pt: ["Manejo Integrado de Pragas", "Modernização da Infraestrutura de Plantas", "Mudança Intensa de Pesticidas", "Manutenção Industrial de Produtos"],
-            en: ["Integrated Pest Management", "Modern Plant Infrastructure", "Intense Pesticide Movement", "Industrial Product Maintenance"],
-            es: ["Manejo Integrado de Plagas", "Modernización de Plantas", "Movimiento de Pesticidas", "Mantenimiento Industrial"],
-            fr: ["Gestion Intégrée des Ravageurs", "Gestion Interne des Plantes", "Génération Intensive de Pesticides", "Gestion Industrielle"],
-            de: ["Integrierter Pflanzenschutz", "Infrastruktur für Pflanzen", "Intensiver Pestizideinsatz", "Industrielle Produktwartung"],
-            it: ["Gestione Integrata dei Parassiti", "Infrastruttura delle Piante", "Movimento di Pesticidi", "Manutenzione Industriale"]
-        }, correct: 0
-    },
-    {
-        question: { pt: "Qual o benefício direto para os polinizadores (como abelhas)?", en: "What is the direct benefit for pollinators (like bees)?", es: "¿Qual es el beneficio directo para polinizadores?", fr: "Quel est le bénéfice direct pour les pollinisateurs?", de: "Was ist der direkte Nutzen für Bestäuber (wie Bienen)?", it: "Qual è il beneficio diretto per gli impollinatori?" },
-        options: {
-            pt: ["Nenhum benefício", "Maior preservação e sobrevivência no ecossistema", "Afastamento das plantações", "Redução da produção de mel"],
-            en: ["No benefit", "Greater preservation and survival in the ecosystem", "Removal from crops", "Reduced honey production"],
-            es: ["Ninguno", "Mayor preservación y supervivencia", "Alejamiento", "Reducción de miel"],
-            fr: ["Aucun bénéfice", "Une plus grande préservation et survie dans l'écosystème", "Éloignement des cultures", "Production de miel réduite"],
-            de: ["Kein Nutzen", "Besserer Schutz und Überleben im Ökosystem", "Entfernung von Pflanzen", "Reduzierte Honigproduktion"],
-            it: ["Nessun beneficio", "Maggiore salvaguardia e sopravvivenza nell'ecosistema", "Allontanamento", "Ridotta produzione di miele"]
+            es: ["Residuos orgánicos", "Residuos químicos tóxicos", "Plásticos", "Agua pura"]
         }, correct: 1
     }
 ];
@@ -185,12 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initLanguageSystem();
     initQuizSystem();
     initScrollReveal();
+    verificarCookies();
 });
 
-// APLICAR AS TRADUÇÕES DINAMICAMENTE NO SITE INTEIRO
 function applyTranslations() {
     const lang = currentLang;
-    const t = translations[lang];
+    const t = translations[lang] || translations['pt'];
 
     document.getElementById('txt-logo').innerHTML = t.logo;
     document.getElementById('txt-nav-header').textContent = t.navHeader;
@@ -236,6 +153,9 @@ function applyTranslations() {
     document.getElementById('txt-ref-title').textContent = t.refTitle;
     document.getElementById('txt-ref-c1').textContent = t.refC1;
     document.getElementById('txt-ref-c2').textContent = t.refC2;
+    document.getElementById('txt-desc-proj-title').textContent = t.descTitle;
+    document.getElementById('txt-desc-proj-content').textContent = t.descContent;
+    document.getElementById('txt-cookie-msg').textContent = t.cookieMsg;
     document.getElementById('txt-footer-copy').innerHTML = t.copy;
 
     renderQuizQuestion();
@@ -256,7 +176,6 @@ function initLanguageSystem() {
     });
 }
 
-// CONTROLO DOS DOIS MENUS HAMBÚRGUER (PRINCIPAL E IDIOMAS)
 function initMenusLaterais() {
     const burgerMain = document.getElementById('menu-main-toggle');
     const mainMenu = document.getElementById('main-menu');
@@ -267,14 +186,12 @@ function initMenusLaterais() {
         e.stopPropagation();
         burgerMain.classList.toggle('active');
         mainMenu.classList.toggle('active');
-        // Fecha o outro se estiver aberto
         langMenu.classList.remove('active');
     });
 
     burgerLang.addEventListener('click', (e) => {
         e.stopPropagation();
         langMenu.classList.toggle('active');
-        // Fecha o outro se estiver aberto
         burgerMain.classList.remove('active');
         mainMenu.classList.remove('active');
     });
@@ -286,15 +203,14 @@ function initMenusLaterais() {
     });
 }
 
-// SISTEMA DE QUIZ COM PONTUAÇÃO E HISTÓRICO
 function initQuizSystem() {
     const nextBtn = document.getElementById('btn-next-quiz');
-    if (!nextBtn) return;
-
-    nextBtn.addEventListener('click', () => {
-        currentQuestionIndex++;
-        renderQuizQuestion();
-    });
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            renderQuizQuestion();
+        });
+    }
     renderQuizQuestion();
 }
 
@@ -316,9 +232,11 @@ function renderQuizQuestion() {
     }
 
     const currentQuiz = quizData[currentQuestionIndex];
-    questionEl.textContent = `(${currentQuestionIndex + 1}/${quizData.length}) ${currentQuiz.question[currentLang]}`;
+    questionEl.textContent = `(${currentQuestionIndex + 1}/${quizData.length}) ${currentQuiz.question[currentLang] || currentQuiz.question['pt']}`;
 
-    currentQuiz.options[currentLang].forEach((optionText, index) => {
+    const optionsList = currentQuiz.options[currentLang] || currentQuiz.options['pt'];
+
+    optionsList.forEach((optionText, index) => {
         const button = document.createElement('button');
         button.className = 'option-btn';
         button.textContent = optionText;
@@ -329,13 +247,13 @@ function renderQuizQuestion() {
             if (index === currentQuiz.correct) {
                 button.classList.add('correct');
                 feedbackEl.className = "quiz-feedback success";
-                feedbackEl.textContent = currentLang === 'pt' ? "Correto! 🌿" : "Correct! 🌿";
+                feedbackEl.textContent = "Correto!";
                 quizScore++;
             } else {
                 button.classList.add('wrong');
                 buttons[currentQuiz.correct].classList.add('correct');
                 feedbackEl.className = "quiz-feedback error";
-                feedbackEl.textContent = currentLang === 'pt' ? "Incorreto." : "Incorrect.";
+                feedbackEl.textContent = "Incorreto.";
             }
             feedbackEl.classList.remove('hidden');
             nextBtn.classList.remove('hidden');
@@ -347,21 +265,12 @@ function renderQuizQuestion() {
 function showQuizFinished() {
     const questionEl = document.getElementById('quiz-question');
     const optionsContainer = document.getElementById('quiz-options');
-    const nextBtn = document.getElementById('btn-next-quiz');
-    
-    nextBtn.classList.add('hidden');
-    if (questionEl) {
-        questionEl.textContent = currentLang === 'pt' ? "Desafio Concluído!" : "Quiz Completed!";
-    }
+    if (questionEl) questionEl.textContent = "Desafio Concluído!";
     if (optionsContainer) {
         optionsContainer.innerHTML = `
-            <div style="text-align: center; padding: 20px 0;">
-                <p style="font-size: 1.2rem; font-weight: bold; color: var(--accent);">
-                    ${currentLang === 'pt' ? 'Sua pontuação final:' : 'Your final score:'} ${quizScore} / ${quizData.length}
-                </p>
-                <button class="btn-submit" style="margin-top: 15px;" onclick="reiniciarQuiz()">
-                    ${currentLang === 'pt' ? 'Tentar Novamente' : 'Try Again'}
-                </button>
+            <div style="text-align: center; padding: 15px 0;">
+                <p style="font-size: 1.1rem; font-weight: bold; color: var(--accent);">Pontuação: ${quizScore} / ${quizData.length}</p>
+                <button class="btn-submit" style="margin-top: 10px;" onclick="reiniciarQuiz()">Tentar Novamente</button>
             </div>
         `;
     }
@@ -373,7 +282,6 @@ function reiniciarQuiz() {
     renderQuizQuestion();
 }
 
-// SISTEMA DE AVALIAÇÃO INTELIGENTE COM LOGICA DE EMOJIS E BOTÃO DE SUGESTÃO
 function votarEmoji(voto) {
     const feedbackBox = document.getElementById('eval-feedback-box');
     const responseText = document.getElementById('eval-response-text');
@@ -382,14 +290,10 @@ function votarEmoji(voto) {
     feedbackBox.classList.remove('hidden');
 
     if (voto === 'ruim' || voto === 'regular') {
-        responseText.textContent = currentLang === 'pt' 
-            ? "Lamentamos que a sua experiência não tenha sido ideal. O que podemos melhorar?" 
-            : "We are sorry that your experience was not ideal. What can we improve?";
+        responseText.textContent = "O que podemos melhorar no ecossistema?";
         negativeAction.classList.remove('hidden');
     } else {
-        responseText.textContent = currentLang === 'pt' 
-            ? "Muito obrigado pela sua excelente avaliação! Ficamos felizes por ajudar." 
-            : "Thank you very much for your excellent review! We are happy to help.";
+        responseText.textContent = "Muito obrigado pelo seu feedback positivo!";
         negativeAction.classList.add('hidden');
     }
 }
@@ -397,14 +301,26 @@ function votarEmoji(voto) {
 function enviarParaSugestao() {
     const msg = document.getElementById('eval-textarea').value;
     if(msg.trim() !== "") {
-        alert(currentLang === 'pt' ? "Obrigado! A sua sugestão foi guardada." : "Thank you! Your suggestion has been saved.");
+        alert("Obrigado pela sugestão!");
         document.getElementById('eval-textarea').value = "";
-        window.location.hash = "#fontes"; // Direciona para a aba final
+        window.location.hash = "#fontes";
     }
 }
 
 function fecharAvaliacao() {
     document.getElementById('avaliacao-container').classList.add('hidden');
+}
+
+// CONTROLO DOS COOKIES RESTAURADO
+function verificarCookies() {
+    if (localStorage.getItem('cookiesAceitos') === 'true') {
+        document.getElementById('cookie-banner').classList.add('hidden');
+    }
+}
+
+function aceitarCookies() {
+    localStorage.setItem('cookiesAceitos', 'true');
+    document.getElementById('cookie-banner').classList.add('hidden');
 }
 
 function initTheme() {
