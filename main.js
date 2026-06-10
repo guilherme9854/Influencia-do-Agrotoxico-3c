@@ -5,8 +5,8 @@ let currentQuestionIndex = 0;
 const translations = {
     pt: {
         logo: "Agro<span>Sustentável</span>", navHeader: "Navegação", lnkInicio: "Início", lnkDados: "Dados Gerais",
-        lnkPasso: "Passo a Passo", lnkPraticas: "Práticas do Campo", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referências",
-        contatoHeader: "Contato", langHeader: "Escolha o Idioma", btnCriar: "Criar conta", btnEntrar: "Entrar",
+        lnkPasso: "Passo a Passo", lnkPraticas: "Práticas Práticas", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referências",
+        contatoHeader: "Contacto", langHeader: "Escolha o Idioma", btnCriar: "Criar conta", btnEntrar: "Entrar",
         heroTag: "Sustentabilidade Racional", heroTitle: "O Futuro do Campo com Manejo Biológico",
         heroDesc: "Uma análise científica sobre como a substituição de defensivos químicos por defensores naturais protege a biodiversidade, reduz custos e garante alimentos mais saudáveis.",
         stat1: "Redução média nos custos de manejo", stat2: "Mais preservação de polinizadores", stat3: "Resíduos tóxicos no produto final",
@@ -18,17 +18,15 @@ const translations = {
         cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradação do Solo",
         cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Joaninhas)", cardBLbl: "Preservação de Água",
         quizTitle: "Desafio do Conhecimento", quizSubtitle: "Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:",
-        evalTitle: "Avalie sua experiência", evalBad: "Lamentamos. Como podemos melhorar?", evalThanks: "Obrigado pela sua avaliação! 💚",
+        evalTitle: "Avalie sua Experiência", evalDesc: "O que achou do nosso ecossistema digital?", btnEvalSend: "Enviar para Sugestões",
         refTitle: "Referências e Fontes Oficiais", refC1: "Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).",
         refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.",
-        cookieMsg: "Utilizamos cookies para melhorar sua experiência acadêmica e garantir a navegação segura do ecossistema.", 
-        copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados.",
-        aboutTitle: "Sobre este Ecossistema Digital",
-        aboutDesc: "Esta plataforma foi desenvolvida como uma ferramenta educacional e científica focada na disseminação de dados sobre agricultura regenerativa e manejo biológico de pragas. O objetivo central é conscientizar a comunidade escolar e produtores rurais a respeito da viabilidade econômica da substituição de defensivos químicos por organismos macrobiológicos, promovendo a conservação dos polinizadores nativos, o equilíbrio dos solos agrícolas e a segurança alimentar a longo prazo em total conformidade com as diretrizes do Programa Agrinho."
+        descTitle: "Sobre este Ecossistema", descContent: "Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.",
+        cookieMsg: "Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados."
     },
     en: {
         logo: "Agro<span>Sustainable</span>", navHeader: "Navigation", lnkInicio: "Home", lnkDados: "General Data",
-        lnkPasso: "Step by Step", lnkPraticas: "Field Practices", lnkQuiz: "Educational Quiz", lnkReferencias: "References",
+        lnkPasso: "Step by Step", lnkPraticas: "Practical Practices", lnkQuiz: "Educational Quiz", lnkReferencias: "References",
         contatoHeader: "Contact", langHeader: "Choose Language", btnCriar: "Create account", btnEntrar: "Sign in",
         heroTag: "Rational Sustainability", heroTitle: "The Future of the Field with Biological Management",
         heroDesc: "A scientific analysis of how replacing chemical pesticides with natural defenders protects biodiversity, reduces costs, and ensures healthier food.",
@@ -41,13 +39,11 @@ const translations = {
         cardQBadge: "Conventional Impact", cardQTitle: "Heavy Chemical Pesticides", cardQLbl: "Soil Degradation",
         cardBBadge: "Ecological Alternative", cardBTitle: "Macrobiologicals (Ladybugs)", cardBLbl: "Water Preservation",
         quizTitle: "Knowledge Challenge", quizSubtitle: "Test your knowledge about the impact of agroecological practices in the field:",
-        evalTitle: "Rate your experience", evalBad: "We are sorry. How can we improve?", evalThanks: "Thank you for your rating! 💚",
+        evalTitle: "Rate Your Experience", evalDesc: "What did you think of our digital ecosystem?", btnEvalSend: "Send to Suggestions",
         refTitle: "References and Official Sources", refC1: "National Guidelines for Integrated Pest Management (IPM).",
         refC2: "Global reports on the safe use of biological inputs in farming.",
-        cookieMsg: "We use cookies to improve your academic experience and ensure secure navigation of the ecosystem.", 
-        copy: "&copy; 2026 AgroSustentável. All rights reserved.",
-        aboutTitle: "About this Digital Ecosystem",
-        aboutDesc: "This platform was developed as an educational and scientific tool focused on the dissemination of data on regenerative agriculture and biological pest management. The central objective is to raise awareness among the school community and rural producers regarding the economic viability of replacing chemical pesticides with macrobiological organisms, promoting the conservation of native pollinators, the balance of agricultural soils, and long-term food security in full compliance with the guidelines of the Agrinho Program."
+        descTitle: "About this Ecosystem", descContent: "This digital platform was developed to spread scientific and practical data on biological management and regenerative agriculture. Aligned with global sustainability goals, the project aims to educate farmers and students on the economic and environmental viability of the field's ecological transition.",
+        cookieMsg: "We use cookies to ensure the best experience within our sustainable ecosystem.", copy: "&copy; 2026 AgroSustentável. All rights reserved."
     }
 };
 
@@ -62,7 +58,7 @@ const quizData = [
     {
         question: { pt: "Qual inseto é famoso por atuar como predador natural de pulgões?", en: "Which insect is famous for acting as a natural predator of aphids?" },
         options: {
-            pt: ["Lagarta do cartucho", "Mosca doméstica comum", "Joaninha maculada", "Gafanhoto migratório"],
+            pt: ["Lagarta do cartucho", "Mosca doméstica comum", "Joaninha maculado", "Gafanhoto migratório"],
             en: ["Fall armyworm", "Common housefly", "Spotted ladybug", "Migratory locust"]
         }, correct: 2
     },
@@ -126,16 +122,16 @@ function applyTranslations() {
     document.getElementById('txt-card-b-lbl').textContent = t.cardBLbl;
     document.getElementById('txt-quiz-title').textContent = t.quizTitle;
     document.getElementById('txt-quiz-subtitle').textContent = t.quizSubtitle;
-    document.getElementById('ui-eval-title').textContent = t.evalTitle;
-    document.getElementById('ui-eval-bad').textContent = t.evalBad;
-    document.getElementById('ui-eval-thanks').textContent = t.evalThanks;
+    document.getElementById('txt-eval-title').textContent = t.evalTitle;
+    document.getElementById('txt-eval-desc').textContent = t.evalDesc;
+    document.getElementById('btn-eval-send').textContent = t.btnEvalSend;
     document.getElementById('txt-ref-title').textContent = t.refTitle;
     document.getElementById('txt-ref-c1').textContent = t.refC1;
     document.getElementById('txt-ref-c2').textContent = t.refC2;
-    document.getElementById('ui-cookie-txt').textContent = t.cookieMsg;
+    document.getElementById('txt-desc-proj-title').textContent = t.descTitle;
+    document.getElementById('txt-desc-proj-content').textContent = t.descContent;
+    document.getElementById('txt-cookie-msg').textContent = t.cookieMsg;
     document.getElementById('txt-footer-copy').innerHTML = t.copy;
-    document.getElementById('txt-about-title').textContent = t.aboutTitle;
-    document.getElementById('txt-about-desc').textContent = t.aboutDesc;
 
     renderQuizQuestion();
 }
@@ -262,38 +258,43 @@ function reiniciarQuiz() {
     renderQuizQuestion();
 }
 
-// LOGICA SISTEMA DE AVALIAÇÃO RESTAURADO
-function handleRating(type) {
-    const s1 = document.getElementById('eval-screen-1');
-    if (type === 'bad') {
-        s1.classList.add('hidden');
-        document.getElementById('eval-screen-bad').classList.remove('hidden');
+function votarEmoji(voto) {
+    const feedbackBox = document.getElementById('eval-feedback-box');
+    const responseText = document.getElementById('eval-response-text');
+    const negativeAction = document.getElementById('eval-negative-action');
+
+    feedbackBox.classList.remove('hidden');
+
+    if (voto === 'ruim' || voto === 'regular') {
+        responseText.textContent = "O que podemos melhorar no ecossistema?";
+        negativeAction.classList.remove('hidden');
     } else {
-        s1.classList.add('hidden');
-        document.getElementById('eval-screen-thanks').classList.remove('hidden');
-        setTimeout(toggleEval, 3000);
+        responseText.textContent = "Muito obrigado pelo seu feedback positivo!";
+        negativeAction.classList.add('hidden');
     }
 }
 
-function submitBadRating() {
-    document.getElementById('eval-screen-bad').classList.add('hidden');
-    document.getElementById('eval-screen-thanks').classList.remove('hidden');
-    setTimeout(toggleEval, 3000);
+function enviarParaSugestao() {
+    const msg = document.getElementById('eval-textarea').value;
+    if(msg.trim() !== "") {
+        alert("Obrigado pela sugestão!");
+        document.getElementById('eval-textarea').value = "";
+        fecharAvaliacao();
+    }
 }
 
-function toggleEval() {
-    document.getElementById('eval-widget').classList.add('hidden');
+function fecharAvaliacao() {
+    document.getElementById('avaliacao-container').classList.add('hidden');
 }
 
-// SISTEMA DE COOKIES
 function verificarCookies() {
-    if (localStorage.getItem('cookiesAccepted') === 'true') {
+    if (localStorage.getItem('cookiesAceitos') === 'true') {
         document.getElementById('cookie-banner').classList.add('hidden');
     }
 }
 
-function acceptCookies() {
-    localStorage.setItem('cookiesAccepted', 'true');
+function aceitarCookies() {
+    localStorage.setItem('cookiesAceitos', 'true');
     document.getElementById('cookie-banner').classList.add('hidden');
 }
 
