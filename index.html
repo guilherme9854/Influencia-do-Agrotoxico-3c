@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho 2026 - Práticas Sustentáveis</title>
+    <title>Agrinho 2026 — Práticas Sustentáveis</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="light-mode">
+<body class="dark-mode">
 
     <nav class="navbar">
         <div class="container nav-container">
@@ -34,6 +34,7 @@
                     <li><a href="#estatisticas" id="lnk-dados">Dados Gerais</a></li>
                     <li><a href="#infografico" id="lnk-passo">Passo a Passo</a></li>
                     <li><a href="#alternativas" id="lnk-praticas">Práticas Práticas</a></li>
+                    <li><a href="#desafio" id="lnk-quiz">Quiz Educativo</a></li>
                     <li><a href="#fontes" id="lnk-referencias">Referências</a></li>
                 </ul>
                 
@@ -71,7 +72,7 @@
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container page-content">
 
         <header id="inicio" class="hero-section reveal">
             <div class="hero-content">
@@ -129,7 +130,7 @@
             </div>
 
             <div class="cards-grid grid-2 alternativas-container">
-                <div class="card premium-card" data-category="quimico">
+                <div class="card" data-category="quimico">
                     <span class="card-badge" id="txt-card-q-badge">Impacto Convencional</span>
                     <h3 id="txt-card-q-title">Defensivos Químicos Pesados</h3>
                     <div class="chart-container">
@@ -140,7 +141,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card premium-card" data-category="biologico">
+                <div class="card" data-category="biologico">
                     <span class="card-badge" id="txt-card-b-badge">Alternativa Ecológica</span>
                     <h3 id="txt-card-b-title">Macrobiológicos (Joaninhas)</h3>
                     <div class="chart-container">
@@ -154,18 +155,32 @@
             </div>
         </section>
 
+        <section id="desafio" class="content-section reveal">
+            <div class="card">
+                <h2 id="txt-quiz-title">Desafio do Conhecimento</h2>
+                <p class="section-instruction" id="txt-quiz-subtitle">Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:</p>
+                
+                <div id="quiz-container">
+                    <h3 id="quiz-question">--</h3>
+                    <div id="quiz-options" class="quiz-options"></div>
+                    <div id="quiz-feedback" class="quiz-feedback hidden"></div>
+                    <button id="btn-next-quiz" class="btn-submit hidden">Avançar</button>
+                </div>
+            </div>
+        </section>
+
         <section id="fontes" class="content-section reveal">
             <h2 id="txt-ref-title">Referências e Fontes Oficiais</h2>
             <div class="references-grid">
                 <div class="ref-item">
-                    <div class="ref-icon"><i class="fas fa-chart-bar" style="color: var(--accent);"></i></div>
+                    <div class="ref-icon"><i class="fas fa-chart-bar"></i></div>
                     <div>
                         <h4>EMBRAPA</h4>
                         <p id="txt-ref-c1">Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).</p>
                     </div>
                 </div>
                 <div class="ref-item">
-                    <div class="ref-icon"><i class="fas fa-leaf" style="color: var(--accent);"></i></div>
+                    <div class="ref-icon"><i class="fas fa-leaf"></i></div>
                     <div>
                         <h4>FAO Organização</h4>
                         <p id="txt-ref-c2">Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.</p>
@@ -179,35 +194,25 @@
             <p id="txt-desc-proj-content">Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.</p>
         </section>
 
-        <section id="sobre" class="sobre-escondido reveal">
-            <p><strong>Desenvolvedor Principal:</strong> Luiz Felipe Pedracoli | <strong>Iniciativa:</strong> Programa Agrinho 2026</p>
-        </section>
-
     </main>
 
-    <div id="avaliacao-container" class="eval-floating-window shadow-card style-closed">
-        <button id="eval-trigger-btn" class="eval-trigger-btn" onclick="expandirAvaliacao()">
-            <span id="txt-eval-trigger-msg">Nos Avalie ⭐</span>
-        </button>
+    <div id="avaliacao-container" class="eval-floating-window">
+        <button class="close-eval-btn" onclick="fecharAvaliacao()" aria-label="Fechar">✕</button>
+        <h3 id="txt-eval-title">Avalie sua Experiência</h3>
+        <p id="txt-eval-desc">O que achou do nosso ecossistema digital?</p>
+        
+        <div class="eval-emojis">
+            <button onclick="votarEmoji('ruim')">😢</button>
+            <button onclick="votarEmoji('regular')">😐</button>
+            <button onclick="votarEmoji('bom')">😊</button>
+            <button onclick="votarEmoji('excelente')">🤩</button>
+        </div>
 
-        <div id="eval-expanded-content" class="hidden">
-            <button class="close-eval-btn" onclick="fecharAvaliacao(event)" aria-label="Fechar">✕</button>
-            <h3 id="txt-eval-title">Avalie sua Experiência</h3>
-            <p id="txt-eval-desc">O que achou do nosso ecossistema digital?</p>
-            
-            <div class="eval-emojis">
-                <button onclick="votarEmoji('ruim')">😢</button>
-                <button onclick="votarEmoji('regular')">😐</button>
-                <button onclick="votarEmoji('bom')">😊</button>
-                <button onclick="votarEmoji('excelente')">🤩</button>
-            </div>
-
-            <div id="eval-feedback-box" class="eval-feedback-box hidden">
-                <p id="eval-response-text"></p>
-                <div id="eval-negative-action" class="hidden" style="margin-top: 8px;">
-                    <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2"></textarea>
-                    <button class="btn-submit" style="font-size:0.75rem; padding:4px 8px; width:100%;" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
-                </div>
+        <div id="eval-feedback-box" class="eval-feedback-box hidden">
+            <p id="eval-response-text"></p>
+            <div id="eval-negative-action" class="hidden">
+                <textarea id="eval-textarea" placeholder="Deixe sua sugestão aqui..." rows="2"></textarea>
+                <button class="btn-submit btn-eval-send-size" onclick="enviarParaSugestao()" id="btn-eval-send">Enviar para Sugestões</button>
             </div>
         </div>
     </div>
@@ -220,13 +225,11 @@
     </div>
 
     <footer class="footer-premium">
-        <div class="container footer-content-wrap">
-            <div class="footer-bottom-flex">
-                <div class="logo" style="font-size: 1rem;">Agro<span>Sustentável</span></div>
-                <p id="txt-footer-copy">&copy; 2026 AgroSustentável. Todos os direitos reservados aos autores.</p>
-                <div class="footer-academic-meta">
-                    <span>ODS 12 & 15 - ONU</span>
-                </div>
+        <div class="container footer-bottom-flex">
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <p id="txt-footer-copy">&copy; 2026 AgroSustentável. Todos os direitos reservados.</p>
+            <div class="footer-academic-meta">
+                <span>ODS 12 & 15 — ONU</span>
             </div>
         </div>
     </footer>

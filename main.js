@@ -1,11 +1,11 @@
-// VARIÁVEIS DE ESTADO DO ECOSSISTEMA
 let currentLang = 'pt';
+let quizScore = 0;
+let currentQuestionIndex = 0;
 
-// TRADUÇÕES COMPLETAS E DETALHADAS CONTENDO TODAS AS SEÇÕES DO SITE
 const translations = {
     pt: {
         logo: "Agro<span>Sustentável</span>", navHeader: "Navegação", lnkInicio: "Início", lnkDados: "Dados Gerais",
-        lnkPasso: "Passo a Passo", lnkPraticas: "Práticas Práticas", lnkReferencias: "Referências",
+        lnkPasso: "Passo a Passo", lnkPraticas: "Práticas Práticas", lnkQuiz: "Quiz Educativo", lnkReferencias: "Referências",
         contatoHeader: "Contacto", langHeader: "Escolha o Idioma", btnCriar: "Criar conta", btnEntrar: "Entrar",
         heroTag: "Sustentabilidade Racional", heroTitle: "O Futuro do Campo com Manejo Biológico",
         heroDesc: "Uma análise científica sobre como a substituição de defensivos químicos por defensores naturais protege a biodiversidade, reduz custos e garante alimentos mais saudáveis.",
@@ -17,15 +17,16 @@ const translations = {
         pracTitle: "Substituições Inteligentes no Campo", fltAll: "Ver Tudo", fltBio: "Manejo Biológico", fltQui: "Riscos Químicos",
         cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradação do Solo",
         cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Joaninhas)", cardBLbl: "Preservação de Água",
-        evalTriggerMsg: "Nos Avalie ⭐", evalTitle: "Avalie sua Experiência", evalDesc: "O que achou do nosso ecossistema digital?", btnEvalSend: "Enviar para Sugestões",
+        quizTitle: "Desafio do Conhecimento", quizSubtitle: "Teste os seus conhecimentos sobre o impacto das práticas agroecológicas no campo:",
+        evalTitle: "Avalie sua Experiência", evalDesc: "O que achou do nosso ecossistema digital?", btnEvalSend: "Enviar para Sugestões",
         refTitle: "Referências e Fontes Oficiais", refC1: "Diretrizes Nacionais para o Manejo Integrado de Pragas (MIP).",
         refC2: "Relatórios globais sobre o uso seguro de insumos biológicos na lavoura.",
         descTitle: "Sobre este Ecossistema", descContent: "Esta plataforma digital foi desenvolvida com o objetivo de disseminar dados científicos e práticos sobre o manejo biológico e a agricultura regenerativa. Alinhado com as metas globais de sustentabilidade, o projeto visa educar produtores e estudantes sobre a viabilidade econômica e ambiental da transição ecológica no campo.",
-        cookieMsg: "Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados aos autores."
+        cookieMsg: "Utilizamos cookies para garantir a melhor experiência no nosso ecossistema sustentável.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados."
     },
     en: {
         logo: "Agro<span>Sustainable</span>", navHeader: "Navigation", lnkInicio: "Home", lnkDados: "General Data",
-        lnkPasso: "Step by Step", lnkPraticas: "Practical Practices", lnkReferencias: "References",
+        lnkPasso: "Step by Step", lnkPraticas: "Practical Practices", lnkQuiz: "Educational Quiz", lnkReferencias: "References",
         contatoHeader: "Contact", langHeader: "Choose Language", btnCriar: "Create account", btnEntrar: "Sign in",
         heroTag: "Rational Sustainability", heroTitle: "The Future of the Field with Biological Management",
         heroDesc: "A scientific analysis of how replacing chemical pesticides with natural defenders protects biodiversity, reduces costs, and ensures healthier food.",
@@ -37,35 +38,48 @@ const translations = {
         pracTitle: "Smart Substitutions in the Field", fltAll: "View All", fltBio: "Biological Management", fltQui: "Chemical Risks",
         cardQBadge: "Conventional Impact", cardQTitle: "Heavy Chemical Pesticides", cardQLbl: "Soil Degradation",
         cardBBadge: "Ecological Alternative", cardBTitle: "Macrobiologicals (Ladybugs)", cardBLbl: "Water Preservation",
-        evalTriggerMsg: "Rate Us ⭐", evalTitle: "Rate Your Experience", evalDesc: "What did you think of our digital ecosystem?", btnEvalSend: "Send to Suggestions",
+        quizTitle: "Knowledge Challenge", quizSubtitle: "Test your knowledge about the impact of agroecological practices in the field:",
+        evalTitle: "Rate Your Experience", evalDesc: "What did you think of our digital ecosystem?", btnEvalSend: "Send to Suggestions",
         refTitle: "References and Official Sources", refC1: "National Guidelines for Integrated Pest Management (IPM).",
         refC2: "Global reports on the safe use of biological inputs in farming.",
         descTitle: "About this Ecosystem", descContent: "This digital platform was developed to spread scientific and practical data on biological management and regenerative agriculture. Aligned with global sustainability goals, the project aims to educate farmers and students on the economic and environmental viability of the field's ecological transition.",
-        cookieMsg: "We use cookies to ensure the best experience within our sustainable ecosystem.", copy: "&copy; 2026 AgroSustentável. All rights reserved to authors."
-    },
-    es: {
-        logo: "Agro<span>Sustentable</span>", navHeader: "Navegación", lnkInicio: "Inicio", lnkDados: "Datos Generales",
-        lnkPasso: "Paso a Paso", lnkPraticas: "Prácticas Prácticas", lnkReferencias: "Referencias",
-        contatoHeader: "Contacto", langHeader: "Elegir Idioma", btnCriar: "Crear cuenta", btnEntrar: "Acceder",
-        heroTag: "Sustentabilidad Racional", heroTitle: "El Futuro del Campo con Manejo Biológico",
-        heroDesc: "Un análisis científico sobre cómo la sustitución de defensivos químicos por defensores naturales protege la biodiversidad, reduce costos y garantiza alimentos más saludables.",
-        stat1: "Reducción promedio en costos de manejo", stat2: "Más preservación de polinizadores", stat3: "Residuos tóxicos en el producto final",
-        stepTitle: "¿Cómo Funciona la Transición Sustentable?", stepInst: "Haga clic en las tarjetas a continuación para ver cada paso del proceso:",
-        stepC1T: "Monitoreo", stepC1D: "Identificación precisa de los focos de plagas antes de actuar.",
-        stepC2T: "Introducción", stepC2D: "Liberación controlada de enemigos naturales específicos.",
-        stepC3T: "Equilibrio", stepC3D: "La propia naturaleza controla la población de plagas.",
-        pracTitle: "Sustituciones Inteligentes en el Campo", fltAll: "Ver Todo", fltBio: "Manejo Biológico", fltQui: "Riesgos Químicos",
-        cardQBadge: "Impacto Convencional", cardQTitle: "Defensivos Químicos Pesados", cardQLbl: "Degradación del Suelo",
-        cardBBadge: "Alternativa Ecológica", cardBTitle: "Macrobiológicos (Mariquitas)", cardBLbl: "Preservación de Agua",
-        evalTriggerMsg: "Calificanos ⭐", evalTitle: "Evalúa tu Experiencia", evalDesc: "¿Qué te pareció nuestro ecosistema digital?", btnEvalSend: "Enviar a Sugerencias",
-        refTitle: "Referencias y Fuentes Oficiales", refC1: "Directrices Nacionales para el Manejo Integrado de Plagas (MIP).",
-        refC2: "Informes globales sobre el uso seguro de insumos biológicos en la agricultura.",
-        descTitle: "Sobre este Ecosistema", descContent: "Esta plataforma digital fue desarrollada con el objetivo de difundir datos científicos y prácticos sobre el manejo biológico y la agricultura regenerativa. El proyecto busca educar a productores y estudiantes sobre la viabilidad económica y ambiental del campo.",
-        cookieMsg: "Utilizamos cookies para garantizar la mejor experiencia en nuestro ecosistema sustentable.", copy: "&copy; 2026 AgroSustentável. Todos os direitos reservados a los autores."
+        cookieMsg: "We use cookies to ensure the best experience within our sustainable ecosystem.", copy: "&copy; 2026 AgroSustentável. All rights reserved."
     }
 };
 
-// APLICAÇÃO DE TRADUÇÃO NOS ARQUIVOS DE UI
+const quizData = [
+    {
+        question: { pt: "Qual é o principal objetivo do Controle Biológico na agricultura?", en: "What is the main objective of Biological Control in farming?" },
+        options: {
+            pt: ["Eliminar toda a biodiversidade local para proteger as plantas.", "Utilizar inimigos naturais (como insetos benéficos) para controlar pragas.", "Aumentar o uso de herbicidas sintéticos na lavoura.", "Substituir a irrigação por produtos químicos concentrados."],
+            en: ["Eliminate all local biodiversity to protect plants.", "Use natural enemies (like beneficial insects) to control pests.", "Increase the use of synthetic herbicides in the field.", "Replace irrigation with concentrated chemical products."]
+        }, correct: 1
+    },
+    {
+        question: { pt: "Qual inseto é famoso por atuar como predador natural de pulgões?", en: "Which insect is famous for acting as a natural predator of aphids?" },
+        options: {
+            pt: ["Lagarta do cartucho", "Mosca doméstica comum", "Joaninha maculado", "Gafanhoto migratório"],
+            en: ["Fall armyworm", "Common housefly", "Spotted ladybug", "Migratory locust"]
+        }, correct: 2
+    },
+    {
+        question: { pt: "O manejo de base biológica reduz prioritariamente qual impacto?", en: "Biologically based management primarily reduces which impact?" },
+        options: {
+            pt: ["A quantidade de matéria orgânica saudável no solo.", "O acúmulo e descarte de resíduos tóxicos químicos.", "A reciclagem de embalagens plásticas descartáveis.", "O fluxo natural de água da chuva limpa."],
+            en: ["The amount of healthy organic matter in the soil.", "The accumulation and disposal of toxic chemical residues.", "The recycling of disposable plastic packaging.", "The natural flow of clean rainwater."]
+        }, correct: 1
+    }
+];
+
+document.addEventListener("DOMContentLoaded", () => {
+    initTheme();
+    initMenusLaterais();
+    initLanguageSystem();
+    initQuizSystem();
+    initScrollReveal();
+    verificarCookies();
+});
+
 function applyTranslations() {
     const lang = currentLang;
     const t = translations[lang] || translations['pt'];
@@ -76,6 +90,7 @@ function applyTranslations() {
     document.getElementById('lnk-dados').textContent = t.lnkDados;
     document.getElementById('lnk-passo').textContent = t.lnkPasso;
     document.getElementById('lnk-praticas').textContent = t.lnkPraticas;
+    document.getElementById('lnk-quiz').textContent = t.lnkQuiz;
     document.getElementById('lnk-referencias').textContent = t.lnkReferencias;
     document.getElementById('txt-contato-header').textContent = t.contatoHeader;
     document.getElementById('txt-lang-header').textContent = t.langHeader;
@@ -105,7 +120,8 @@ function applyTranslations() {
     document.getElementById('txt-card-b-badge').textContent = t.cardBBadge;
     document.getElementById('txt-card-b-title').textContent = t.cardBTitle;
     document.getElementById('txt-card-b-lbl').textContent = t.cardBLbl;
-    document.getElementById('txt-eval-trigger-msg').textContent = t.evalTriggerMsg;
+    document.getElementById('txt-quiz-title').textContent = t.quizTitle;
+    document.getElementById('txt-quiz-subtitle').textContent = t.quizSubtitle;
     document.getElementById('txt-eval-title').textContent = t.evalTitle;
     document.getElementById('txt-eval-desc').textContent = t.evalDesc;
     document.getElementById('btn-eval-send').textContent = t.btnEvalSend;
@@ -116,6 +132,8 @@ function applyTranslations() {
     document.getElementById('txt-desc-proj-content').textContent = t.descContent;
     document.getElementById('txt-cookie-msg').textContent = t.cookieMsg;
     document.getElementById('txt-footer-copy').innerHTML = t.copy;
+
+    renderQuizQuestion();
 }
 
 function initLanguageSystem() {
@@ -160,16 +178,84 @@ function initMenusLaterais() {
     });
 }
 
-// LOGICA DE EXPANSÃO DA JANELA DE AVALIAÇÃO
-function expandirAvaliacao() {
-    const container = document.getElementById('avaliacao-container');
-    const triggerBtn = document.getElementById('eval-trigger-btn');
-    const expandedContent = document.getElementById('eval-expanded-content');
+function initQuizSystem() {
+    const nextBtn = document.getElementById('btn-next-quiz');
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            currentQuestionIndex++;
+            renderQuizQuestion();
+        });
+    }
+    renderQuizQuestion();
+}
 
-    container.classList.remove('style-closed');
-    container.classList.add('style-expanded');
-    triggerBtn.classList.add('hidden');
-    expandedContent.classList.remove('hidden');
+function renderQuizQuestion() {
+    const questionEl = document.getElementById('quiz-question');
+    const optionsContainer = document.getElementById('quiz-options');
+    const feedbackEl = document.getElementById('quiz-feedback');
+    const nextBtn = document.getElementById('btn-next-quiz');
+
+    if (!questionEl || !optionsContainer) return;
+
+    feedbackEl.classList.add('hidden');
+    nextBtn.classList.add('hidden');
+    optionsContainer.innerHTML = '';
+
+    if (currentQuestionIndex >= quizData.length) {
+        showQuizFinished();
+        return;
+    }
+
+    const currentQuiz = quizData[currentQuestionIndex];
+    const qLang = currentQuiz.question[currentLang] || currentQuiz.question['pt'];
+    questionEl.textContent = `(${currentQuestionIndex + 1}/${quizData.length}) ${qLang}`;
+
+    const optionsList = currentQuiz.options[currentLang] || currentQuiz.options['pt'];
+
+    optionsList.forEach((optionText, index) => {
+        const button = document.createElement('button');
+        button.className = 'option-btn';
+        button.textContent = optionText;
+        button.addEventListener('click', () => {
+            const buttons = optionsContainer.querySelectorAll('.option-btn');
+            buttons.forEach(b => b.disabled = true);
+
+            if (index === currentQuiz.correct) {
+                button.classList.add('correct');
+                feedbackEl.className = "quiz-feedback success";
+                feedbackEl.textContent = "Correto!";
+                quizScore++;
+            } else {
+                button.classList.add('wrong');
+                buttons[currentQuiz.correct].classList.add('correct');
+                feedbackEl.className = "quiz-feedback error";
+                feedbackEl.textContent = "Incorreto.";
+            }
+            feedbackEl.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+        });
+        optionsContainer.appendChild(button);
+    });
+}
+
+function showQuizFinished() {
+    const questionEl = document.getElementById('quiz-question');
+    const optionsContainer = document.getElementById('quiz-options');
+    if (questionEl) questionEl.textContent = "Desafio Concluído!";
+    if (optionsContainer) {
+        optionsContainer.innerHTML = `
+            <div style="text-align: center; padding: 10px 0;">
+                <p style="font-size: 1.1rem; font-weight: bold; color: var(--accent);">Pontuação Final: ${quizScore} / ${quizData.length}</p>
+                <button class="btn-submit" style="margin-top: 14px;" onclick="reiniciarQuiz()">Tentar Novamente</button>
+            </div>
+        `;
+    }
+}
+
+function reiniciarQuiz() {
+    quizScore = 0;
+    currentQuestionIndex = 0;
+    renderQuizQuestion();
 }
 
 function votarEmoji(voto) {
@@ -180,43 +266,27 @@ function votarEmoji(voto) {
     feedbackBox.classList.remove('hidden');
 
     if (voto === 'ruim' || voto === 'regular') {
-        responseText.textContent = currentLang === 'en' ? "How can we improve?" : currentLang === 'es' ? "¿Cómo podemos mejorar?" : "O que podemos melhorar no ecossistema?";
+        responseText.textContent = "O que podemos melhorar no ecossistema?";
         negativeAction.classList.remove('hidden');
     } else {
-        responseText.textContent = currentLang === 'en' ? "Thank you for your rating! 💚" : currentLang === 'es' ? "¡Gracias por tu calificación! 💚" : "Muito obrigado pelo seu feedback positivo! 💚";
+        responseText.textContent = "Muito obrigado pelo seu feedback positivo!";
         negativeAction.classList.add('hidden');
-        setTimeout(() => { fecharFinal(); }, 2500);
     }
 }
 
 function enviarParaSugestao() {
     const msg = document.getElementById('eval-textarea').value;
     if(msg.trim() !== "") {
-        alert(currentLang === 'en' ? "Thank you for your suggestions!" : currentLang === 'es' ? "¡Gracias por sus sugerencias!" : "Obrigado pela sugestão!");
+        alert("Obrigado pela sugestão!");
         document.getElementById('eval-textarea').value = "";
-        fecharFinal();
+        fecharAvaliacao();
     }
 }
 
-function fecharAvaliacao(event) {
-    if (event) event.stopPropagation(); // Evita reabrir acidentalmente
-    fecharFinal();
+function fecharAvaliacao() {
+    document.getElementById('avaliacao-container').classList.add('hidden');
 }
 
-function fecharFinal() {
-    const container = document.getElementById('avaliacao-container');
-    const triggerBtn = document.getElementById('eval-trigger-btn');
-    const expandedContent = document.getElementById('eval-expanded-content');
-    const feedbackBox = document.getElementById('eval-feedback-box');
-
-    feedbackBox.classList.add('hidden');
-    expandedContent.classList.add('hidden');
-    container.classList.remove('style-expanded');
-    container.classList.add('style-closed');
-    triggerBtn.classList.remove('hidden');
-}
-
-// CONVENÇÃO DE COOKIES
 function verificarCookies() {
     if (localStorage.getItem('cookiesAceitos') === 'true') {
         document.getElementById('cookie-banner').classList.add('hidden');
@@ -228,7 +298,6 @@ function aceitarCookies() {
     document.getElementById('cookie-banner').classList.add('hidden');
 }
 
-// SELEÇÃO DE TEMA CLARO E ESCURO
 function initTheme() {
     const toggle = document.getElementById('theme-toggle');
     if (!toggle) return;
@@ -243,7 +312,6 @@ function initTheme() {
     });
 }
 
-// FILTRO DINÂMICO DE PRÁTICAS
 function filterAlternativas(category) {
     const cards = document.querySelectorAll('.alternativas-container .card');
     cards.forEach(card => {
@@ -253,13 +321,8 @@ function filterAlternativas(category) {
             card.classList.add('hidden');
         }
     });
-    
-    const buttons = document.querySelectorAll('.filter-buttons .btn-filter');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
 }
 
-// ABAS DO INFOGRÁFICO
 function switchStep(step) {
     const cards = document.querySelectorAll('.infographic-steps .step-card');
     cards.forEach((c, idx) => {
@@ -268,7 +331,6 @@ function switchStep(step) {
     });
 }
 
-// REVEAL ANIMATION
 function initScrollReveal() {
     const els = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver((entries) => {
@@ -281,12 +343,3 @@ function initScrollReveal() {
     }, { threshold: 0.05 });
     els.forEach(el => obs.observe(el));
 }
-
-// DISPARO INICIAL
-document.addEventListener("DOMContentLoaded", () => {
-    initTheme();
-    initMenusLaterais();
-    initLanguageSystem();
-    initScrollReveal();
-    verificarCookies();
-});
